@@ -151,6 +151,7 @@ export class SingleLinkedList<T> {
         while (currentNode) {
           const nextNode: null | SingleLinkedListNode<T> = currentNode.getNext()
           if (!isNull(nextNode) && nextNode.isEqual(value)) {
+            currentNode.setNext(nextNode.getNext())
             currentNode = nextNode.getNext()
             this.length--
             isFound = true
@@ -168,6 +169,45 @@ export class SingleLinkedList<T> {
 
       return isFound
     }
+  }
+
+  /**
+   * remove element at index of the list
+   *
+   * @param {number} index
+   * @returns {(T | null)}
+   * @memberof SingleLinkedList
+   */
+  removeAt(index: number): T | null {
+    if (index > this.getLength() - 1 || isNull(this.head)) {
+      return null
+    }
+
+    let counter = 0
+    let currentNode: null | SingleLinkedListNode<T> = this.head
+    let foundNode = null
+
+    if (index === 0) {
+      this.head = this.head.getNext()
+      this.length--
+      return currentNode.getValue()
+    }
+
+    while (currentNode) {
+      if (counter === index - 1) {
+        const nextNode: null | SingleLinkedListNode<T> = currentNode.getNext()
+        if (!isNull(nextNode)) {
+          currentNode.setNext(nextNode.getNext())
+          foundNode = nextNode.getValue()
+        }
+        this.length--
+        break
+      }
+      currentNode = currentNode.getNext()
+      counter++
+    }
+
+    return foundNode
   }
 
   /**

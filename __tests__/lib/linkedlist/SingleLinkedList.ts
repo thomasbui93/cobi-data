@@ -161,3 +161,59 @@ describe('SingleLinkedList reverse', () => {
     expect(linkedlist.toArray()).toEqual([5,4,3,2,1])
   })
 })
+
+describe('SingleLinkedList removeAt', () => {
+  it('should able to remove the normal index', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    expect(linkedlist.removeAt(2)).toEqual(3)
+    expect(linkedlist.toArray()).toEqual([1,2,4,5])
+  })
+
+  it('should able to remove the first index', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    expect(linkedlist.removeAt(0)).toEqual(1)
+    expect(linkedlist.toArray()).toEqual([2,3,4,5])
+  })
+
+  it('should able to remove the last index', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    expect(linkedlist.removeAt(4)).toEqual(5)
+    expect(linkedlist.toArray()).toEqual([1,2,3,4])
+  })
+
+  it('should not able to remove from an empty list', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([])
+    expect(linkedlist.removeAt(4)).toEqual(null)
+    expect(linkedlist.toArray()).toEqual([])
+  })
+
+  it('should not able to remove from out of range index', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    expect(linkedlist.removeAt(6)).toEqual(null)
+    expect(linkedlist.toArray()).toEqual([1,2,3,4,5])
+  })
+
+  it('should not able to from single element list', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1])
+    expect(linkedlist.removeAt(0)).toEqual(1)
+    expect(linkedlist.toArray()).toEqual([])
+  })
+})
+
+describe('SingleLinkedList combine tests', () => {
+  it('should be able to withstand combination of add and remove', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.append(1)
+    linkedlist.append(2)
+    linkedlist.append(3)
+    linkedlist.remove(2)
+    linkedlist.append(5)
+    expect(linkedlist.toArray()).toEqual([1,3,5])
+  })
+})
