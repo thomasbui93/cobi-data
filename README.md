@@ -1,2 +1,2 @@
-# cobi-data
-Data structure library
+# Cobi Data
+Data structure library with Typescript
