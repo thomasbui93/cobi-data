@@ -1,4 +1,4 @@
-import { SingleLinkedList } from '../linkedlist'
+import { GenericList } from '../generic-list/GenericList'
 
 /**
  * class Stack
@@ -7,9 +7,7 @@ import { SingleLinkedList } from '../linkedlist'
  * @class Stack
  * @template T
  */
-export class Stack<T> {
-  private items: SingleLinkedList<T> = new SingleLinkedList()
-
+export class Stack<T> extends GenericList<T> {
   /**
    * add element to the stack
    *
@@ -28,15 +26,5 @@ export class Stack<T> {
    */
   pop(): T | null {
     return this.items.removeAt(this.items.getLength() - 1)
-  }
-
-  /**
-   * get number of element in the stack
-   *
-   * @returns {number}
-   * @memberof Stack
-   */
-  getLength(): number {
-    return this.items.getLength()
   }
 }

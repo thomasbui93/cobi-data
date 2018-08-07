@@ -11,4 +11,25 @@ describe('Stack push and pop method', () => {
       expect(stack.pop()).toEqual(expectedArray.shift())
     }
   })
+
+  it('should be able add element to the list', () => {
+    const stack: Stack<number> = new Stack()
+    expect(stack.pop()).toEqual(null)
+  })
+})
+
+describe('Stack getLength and isEmpty', () => {
+  it('should get correct length of the list', () => {
+    const stack: Stack<number> = new Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    expect(stack.getLength()).toBe(3)
+    expect(stack.isEmpty()).toBe(false)
+  })
+
+  it('should return true is stack is empty', () => {
+    const stack: Stack<number> = new Stack()
+    expect(stack.isEmpty()).toEqual(true)
+  })
 })
