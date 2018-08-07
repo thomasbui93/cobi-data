@@ -1,9 +1,15 @@
 import { SingleLinkedListNode, SingleLinkedList } from './../../../src/lib/linkedlist/index'
 
 describe('SingleLinkedListNode class', () => {
-  it('SingleLinkedListNode constructor', () => {
+  it('SingleLinkedListNode getValue', () => {
     const node = new SingleLinkedListNode(3)
     expect(node.getValue()).toEqual(3)
+  })
+
+  it('SingleLinkedListNode setValue', () => {
+    const node = new SingleLinkedListNode(3)
+    node.setValue(9)
+    expect(node.getValue()).toEqual(9)
   })
 
   it('SingleLinkedListNode isEqual', () => {
@@ -88,6 +94,34 @@ describe('SingleLinkedList find', () => {
   })
 })
 
+describe('SingleLinkedList fromArray', () => {
+  it('should create a list from array', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    expect(linkedlist.toArray()).toEqual([1,2,3,4,5])
+  })
+})
+
+describe('SingleLinkedList map', () => {
+  it('should map list from array', () => {
+    const linkedlist = new SingleLinkedList()
+    const double = (value) => 2*value
+    linkedlist.fromArray([1,2,3,4,5])
+    linkedlist.map(double)
+    expect(linkedlist.toArray()).toEqual([2,4,6,8,10])
+  })
+})
+
+describe('SingleLinkedList forEach', () => {
+  it('should map list from array', () => {
+    const linkedlist = new SingleLinkedList()
+    const double = (value) => 2*value
+    linkedlist.fromArray([1,2,3,4,5])
+    linkedlist.forEach(double)
+    expect(linkedlist.toArray()).toEqual([1,2,3,4,5])
+  })
+})
+
 describe('SingleLinkedList remove', () => {
   it('should return false if it is an empty list', () => {
     const linkedlist = new SingleLinkedList();
@@ -116,5 +150,14 @@ describe('SingleLinkedList remove', () => {
     const linkedlist = new SingleLinkedList();
     [1,2,3,4,5].forEach(element => linkedlist.append(element))
     expect(linkedlist.remove(2)).toBeTruthy()
+  })
+})
+
+describe('SingleLinkedList reverse', () => {
+  it('should reverse list', () => {
+    const linkedlist = new SingleLinkedList()
+    linkedlist.fromArray([1,2,3,4,5])
+    linkedlist.reverse()
+    expect(linkedlist.toArray()).toEqual([5,4,3,2,1])
   })
 })

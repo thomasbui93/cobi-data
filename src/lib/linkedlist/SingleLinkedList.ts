@@ -26,6 +26,16 @@ export class SingleLinkedListNode<T> {
   }
 
   /**
+   * update value of current node
+   *
+   * @param {T} value
+   * @memberof SingleLinkedListNode
+   */
+  setValue(value: T): void {
+    this.value = value
+  }
+
+  /**
    * get next value for current node
    *
    * @returns {(null | SingleLinkedListNode<T>)}
@@ -180,6 +190,49 @@ export class SingleLinkedList<T> {
   }
 
   /**
+   * Traverse through linkedlist with callback
+   *
+   * @param {(value: T) => void} callbackFunction
+   * @returns {SingleLinkedList<T>}
+   * @memberof SingleLinkedList
+   */
+  forEach(callbackFunction: (value: T) => void): SingleLinkedList<T> {
+    let currentNode = this.head
+    while (!isNull(currentNode)) {
+      callbackFunction(currentNode.getValue())
+      currentNode = currentNode.getNext()
+    }
+    return this
+  }
+
+  /**
+   * map linkedlist with callback
+   *
+   * @param {(value: T) => T} callbackFunction
+   * @returns {SingleLinkedList<T>}
+   * @memberof SingleLinkedList
+   */
+  map(callbackFunction: (value: T) => T): SingleLinkedList<T> {
+    let currentNode = this.head
+    while (!isNull(currentNode)) {
+      currentNode.setValue(callbackFunction(currentNode.getValue()))
+      currentNode = currentNode.getNext()
+    }
+    return this
+  }
+
+  reverse(): void {
+    let prev = null
+    let current = this.head
+    while (!isNull(current)) {
+      let next = current.getNext()
+      current.setNext(prev)
+      prev = current
+      current = next
+    }
+    this.head = prev
+  }
+  /**
    * Convert the linkedlist to array
    *
    * @return {T[]} Returns array of linked list value in order from head to tail
@@ -192,6 +245,17 @@ export class SingleLinkedList<T> {
       currentNode = currentNode.getNext()
     }
     return returnedArray
+  }
+
+  /**
+   * convert array to linked list
+   *
+   * @param {T[]} inputArray
+   * @returns {void}
+   * @memberof SingleLinkedList
+   */
+  fromArray(inputArray: T[]): void {
+    return inputArray.forEach(this.append.bind(this))
   }
 
   /**
