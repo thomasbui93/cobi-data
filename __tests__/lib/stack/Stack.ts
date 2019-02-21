@@ -5,16 +5,16 @@ describe('Stack push and pop method', () => {
     stack.push(1)
     stack.push(2)
     stack.push(3)
-    expect(stack.getLength()).toBe(3)
+    expect(stack.length).toBe(3)
     const expectedArray = [3, 2, 1]
-    while (stack.getLength() > 0) {
+    while (stack.length > 0) {
       expect(stack.pop()).toEqual(expectedArray.shift())
     }
   })
 
   it('should be able add element to the list', () => {
     const stack: Stack<number> = new Stack()
-    expect(stack.pop()).toEqual(null)
+    expect(stack.pop()).toEqual(undefined)
   })
 })
 
@@ -24,7 +24,7 @@ describe('Stack getLength and isEmpty', () => {
     stack.push(1)
     stack.push(2)
     stack.push(3)
-    expect(stack.getLength()).toBe(3)
+    expect(stack.length).toBe(3)
     expect(stack.isEmpty()).toBe(false)
   })
 

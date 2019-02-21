@@ -20,4 +20,12 @@ export class Queue<T> {
   dequeue(): T | undefined {
     return this.items.shift()
   }
+
+  get length() {
+    return this.items.length
+  }
+
+  public isEmpty() {
+    return this.length === 0
+  }
 }

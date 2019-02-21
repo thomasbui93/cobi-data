@@ -4,6 +4,7 @@
         "tslint-config-prettier"
     ],
     "rules": {
-        "no-unused-variable": false
+        "no-unused-variable": false,
+        "semicolon": [true, "never"]
     }
 }

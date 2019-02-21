@@ -26,4 +26,12 @@ export class Stack<T> {
   pop(): T | undefined {
     return this.items.pop()
   }
+
+  get length() {
+    return this.items.length
+  }
+
+  public isEmpty() {
+    return this.length === 0
+  }
 }
