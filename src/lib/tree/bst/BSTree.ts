@@ -1,7 +1,7 @@
 import { BSTreeNode } from './BSTreeNode'
-import { CompareFunction, compare, ComparableReturn } from '../type/compareFunction'
-import { Nullable } from '../type/nullable'
-import { mapFunction } from '../type/mapFunction'
+import { CompareFunction, compare, ComparableReturn } from '../../type/compareFunction'
+import { Nullable } from '../../type/nullable'
+import { mapFunction } from '../../type/mapFunction'
 
 export class BSTree<T> {
   public root: Nullable<BSTreeNode<T>> = null

@@ -1,4 +1,4 @@
-import { BSTree } from '../../../src/lib/bst/BSTree'
+import { BSTree } from '../../../src/lib/tree/bst/BSTree'
 import { compare } from '../../../src/lib/type/compareFunction'
 
 describe('BSTree insert method', () => {
