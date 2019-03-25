@@ -73,7 +73,8 @@
         "statements": 95
       }
     },
-    "collectCoverage": true
+    "collectCoverage": true,
+    "testURL": "https://www.google.com"
   },
   "prettier": {
     "semi": false,

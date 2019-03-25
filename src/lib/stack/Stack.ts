@@ -1,5 +1,3 @@
-import { GenericList } from '../generic-list/GenericList'
-
 /**
  * class Stack
  *
@@ -7,7 +5,8 @@ import { GenericList } from '../generic-list/GenericList'
  * @class Stack
  * @template T
  */
-export class Stack<T> extends GenericList<T> {
+export class Stack<T> {
+  items: T[] = []
   /**
    * add element to the stack
    *
@@ -15,7 +14,7 @@ export class Stack<T> extends GenericList<T> {
    * @memberof Stack
    */
   push(item: T): void {
-    this.items.append(item)
+    this.items.push(item)
   }
 
   /**
@@ -24,7 +23,15 @@ export class Stack<T> extends GenericList<T> {
    * @returns {(T | null)}
    * @memberof Stack
    */
-  pop(): T | null {
-    return this.items.removeAt(this.items.getLength() - 1)
+  pop(): T | undefined {
+    return this.items.pop()
+  }
+
+  get length() {
+    return this.items.length
+  }
+
+  public isEmpty() {
+    return this.length === 0
   }
 }

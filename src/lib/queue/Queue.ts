@@ -1,6 +1,5 @@
-import { GenericList } from '../generic-list/GenericList'
-
-export class Queue<T> extends GenericList<T> {
+export class Queue<T> {
+  items: T[] = []
   /**
    * add element to the queue
    *
@@ -8,7 +7,7 @@ export class Queue<T> extends GenericList<T> {
    * @memberof Stack
    */
   queue(item: T): void {
-    this.items.append(item)
+    this.items.push(item)
   }
 
   /**
@@ -18,7 +17,15 @@ export class Queue<T> extends GenericList<T> {
    * @memberof Queue
    * @return {T} return dequeued element, null if queque is empty
    */
-  dequeue(): T | null {
-    return this.items.removeAt(0)
+  dequeue(): T | undefined {
+    return this.items.shift()
+  }
+
+  get length() {
+    return this.items.length
+  }
+
+  public isEmpty() {
+    return this.length === 0
   }
 }
