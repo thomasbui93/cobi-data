@@ -5,13 +5,13 @@ describe('BSTree insert method', () => {
   it('should be able add element to the list', () => {
     const testCases = [
       [15, 5, 10, 20, 50, 90, 40],
-      [1,2,3,4,5,6,7, 8, 9, 10, 11, 0],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0],
       [90, 80, 70, 60, 20],
       [5, 5],
       [],
       [null]
     ]
-    testCases.forEach((sourceData) => {
+    testCases.forEach(sourceData => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
       const processedData = []
@@ -38,11 +38,11 @@ describe('BSTree traverseDepthFirst method', () => {
   it('should be able traverse through tree in order', () => {
     const testCases = [
       [15, 5, 10, 20, 50, 90, 40],
-      [1,2,3,4,5,6,7, 8, 9, 10, 11, 0],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0],
       [90, 80, 70, 60, 20],
       []
     ]
-    testCases.forEach((sourceData) => {
+    testCases.forEach(sourceData => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
       const processedData = []
@@ -55,11 +55,7 @@ describe('BSTree traverseDepthFirst method', () => {
 
 describe('BSTree traverseBreathFirst method', () => {
   it('should be able traverse through tree by level', () => {
-    const testCases = [
-      [[15, 5, 20 ], [15, 5, 20]],
-      [[15, 5, 11, 22 ], [15, 5, 22, 11]],
-      [[], []]
-    ]
+    const testCases = [[[15, 5, 20], [15, 5, 20]], [[15, 5, 11, 22], [15, 5, 22, 11]], [[], []]]
     testCases.forEach(([sourceData, result]) => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
@@ -73,7 +69,7 @@ describe('BSTree traverseBreathFirst method', () => {
 describe('BSTree remove method', () => {
   it('should be able to remove element from tree', () => {
     const testCases = [
-      [[15, 5, 20 ], [5], [15, 20]],
+      [[15, 5, 20], [5], [15, 20]],
       [[15, 5, 20], [15], [5, 20]],
       [[15, 5, 20, 40], [20], [5, 15, 40]],
       [[15, 10, 20, 16], [20], [10, 15, 16]],
