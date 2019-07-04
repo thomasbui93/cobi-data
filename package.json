@@ -32,7 +32,9 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
     "{src,__tests__}/**/*.ts": [
@@ -117,7 +119,8 @@
     "validate-commit-msg": "^2.12.2"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "snyk": "^1.190.0"
   },
   "bugs": {
     "url": "https://github.com/thomasbui93/cobi-data/issues"
@@ -125,5 +128,6 @@
   "homepage": "https://github.com/thomasbui93/cobi-data#readme",
   "directories": {
     "doc": "docs"
-  }
+  },
+  "snyk": true
 }
