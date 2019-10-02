@@ -1,5 +1,6 @@
 import { BSTree } from '../../../src/lib/tree/bst/BSTree'
 import { compare } from '../../../src/lib/type/compareFunction'
+import { BSTreeNode } from '../../../src/lib/tree/bst/BSTreeNode'
 
 describe('BSTree insert method', () => {
   it('should be able add element to the list', () => {
@@ -13,8 +14,8 @@ describe('BSTree insert method', () => {
     ]
     testCases.forEach(sourceData => {
       const bstTree = new BSTree()
-      sourceData.forEach(e => bstTree.insertRoot(e))
-      const processedData = []
+      sourceData.forEach((e: any) => bstTree.insertRoot(e))
+      const processedData: any[] = []
       bstTree.traverseDepthFirst(value => processedData.push(value))
       processedData.sort(compare)
       expect(processedData).toEqual(Array.from(new Set(processedData)))
@@ -45,8 +46,8 @@ describe('BSTree traverseDepthFirst method', () => {
     testCases.forEach(sourceData => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
-      const processedData = []
-      bstTree.traverseDepthFirst(value => processedData.push(value))
+      const processedData: number[] = []
+      bstTree.traverseDepthFirst((value: any) => processedData.push(value))
       sourceData.sort(compare)
       expect(processedData).toEqual(sourceData)
     })
@@ -59,8 +60,8 @@ describe('BSTree traverseBreathFirst method', () => {
     testCases.forEach(([sourceData, result]) => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
-      const processedData = []
-      bstTree.traverseBreathFirst(value => processedData.push(value))
+      const processedData: number[] = []
+      bstTree.traverseBreathFirst((value: any) => processedData.push(value))
       expect(processedData).toEqual(result)
     })
   })
@@ -79,8 +80,8 @@ describe('BSTree remove method', () => {
       const bstTree = new BSTree()
       sourceData.forEach(e => bstTree.insertRoot(e))
       bstTree.removeRoot(removed[0])
-      const processedData = []
-      bstTree.traverseDepthFirst(value => processedData.push(value))
+      const processedData: number[] = []
+      bstTree.traverseDepthFirst((value: any) => processedData.push(value))
       expect(processedData).toEqual(result)
     })
   })
