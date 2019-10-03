@@ -32,7 +32,7 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "check": "npm test && pkg-ok && npm run prettier && npm run build",
+    "check": "npm test && pkg-ok && npm run prettier",
     "prettier": "prettier --write \"{src,__tests__}/**/*.ts\""
   },
   "config": {
