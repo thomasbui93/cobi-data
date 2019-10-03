@@ -1,4 +1,4 @@
-import { Queue } from '../../../src/lib/queue/index'
+import { Queue } from '../../../src/lib/linear/queue/index'
 
 describe('Queue push and pop method', () => {
   it('should be able add element to the list', () => {

@@ -1,4 +1,4 @@
-import { Stack } from '../../../src/lib/stack/index'
+import { Stack } from '../../../src/lib/linear/stack/index'
 describe('Stack push and pop method', () => {
   it('should be able add element to the list', () => {
     const stack: Stack<number> = new Stack()

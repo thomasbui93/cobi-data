@@ -1,6 +1,5 @@
 import { BSTree } from '../../../src/lib/tree/bst/BSTree'
 import { compare } from '../../../src/lib/type/compareFunction'
-import { BSTreeNode } from '../../../src/lib/tree/bst/BSTreeNode'
 
 describe('BSTree insert method', () => {
   it('should be able add element to the list', () => {
