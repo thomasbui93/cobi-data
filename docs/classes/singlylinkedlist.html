@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ComparableReturn | @moonage/cobi-data</title>
+	<title>SinglyLinkedList | @moonage/cobi-data</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2377,37 +2377,64 @@ img {
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class="current tsd-kind-enum">
-			<a href="comparablereturn.html" class="tsd-kind-icon">Comparable<wbr>Return</a>
+		<li class=" tsd-kind-enum">
+			<a href="../enums/comparablereturn.html" class="tsd-kind-icon">Comparable<wbr>Return</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="bstree.html" class="tsd-kind-icon">BSTree</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="bstreenode.html" class="tsd-kind-icon">BSTree<wbr>Node</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="queue.html" class="tsd-kind-icon">Queue</a>
+		</li>
+		<li class="current tsd-kind-class tsd-has-type-parameter">
+			<a href="singlylinkedlist.html" class="tsd-kind-icon">Singly<wbr>Linked<wbr>List</a>
 			<ul>
-				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-					<a href="comparablereturn.html#equal" class="tsd-kind-icon">EQUAL</a>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
-				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-					<a href="comparablereturn.html#larger" class="tsd-kind-icon">LARGER</a>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#counter" class="tsd-kind-icon">counter</a>
 				</li>
-				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-					<a href="comparablereturn.html#smaller" class="tsd-kind-icon">SMALLER</a>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#head" class="tsd-kind-icon">head</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#length" class="tsd-kind-icon">length</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#append" class="tsd-kind-icon">append</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#appendafter" class="tsd-kind-icon">append<wbr>After</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#clear" class="tsd-kind-icon">clear</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#getat" class="tsd-kind-icon">get<wbr>At</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#prepend" class="tsd-kind-icon">prepend</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#removeat" class="tsd-kind-icon">remove<wbr>At</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#reverse" class="tsd-kind-icon">reverse</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="singlylinkedlist.html#toarray" class="tsd-kind-icon">to<wbr>Array</a>
 				</li>
 			</ul>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/bstree.html" class="tsd-kind-icon">BSTree</a>
+			<a href="singlynode.html" class="tsd-kind-icon">Singly<wbr>Node</a>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/bstreenode.html" class="tsd-kind-icon">BSTree<wbr>Node</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/queue.html" class="tsd-kind-icon">Queue</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/singlylinkedlist.html" class="tsd-kind-icon">Singly<wbr>Linked<wbr>List</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/singlynode.html" class="tsd-kind-icon">Singly<wbr>Node</a>
-		</li>
-		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="../classes/stack.html" class="tsd-kind-icon">Stack</a>
+			<a href="stack.html" class="tsd-kind-icon">Stack</a>
 		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 			<a href="../globals.html#comparefunction" class="tsd-kind-icon">Compare<wbr>Function</a>
@@ -2425,52 +2452,374 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-type-parameters">
+			<h3>Type parameters</h3>
+			<ul class="tsd-type-parameters">
+				<li>
+					<h4>T</h4>
+				</li>
+			</ul>
+		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">SinglyLinkedList</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Enumeration members</h3>
+						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="comparablereturn.html#equal" class="tsd-kind-icon">EQUAL</a></li>
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="comparablereturn.html#larger" class="tsd-kind-icon">LARGER</a></li>
-							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="comparablereturn.html#smaller" class="tsd-kind-icon">SMALLER</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="singlylinkedlist.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Properties</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="singlylinkedlist.html#counter" class="tsd-kind-icon">counter</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="singlylinkedlist.html#head" class="tsd-kind-icon">head</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Accessors</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="singlylinkedlist.html#length" class="tsd-kind-icon">length</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Methods</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#append" class="tsd-kind-icon">append</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#appendafter" class="tsd-kind-icon">append<wbr>After</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#clear" class="tsd-kind-icon">clear</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#getat" class="tsd-kind-icon">get<wbr>At</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#prepend" class="tsd-kind-icon">prepend</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#removeat" class="tsd-kind-icon">remove<wbr>At</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#reverse" class="tsd-kind-icon">reverse</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="singlylinkedlist.html#toarray" class="tsd-kind-icon">to<wbr>Array</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
-			<h2>Enumeration members</h2>
-			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-				<a name="equal" class="tsd-anchor"></a>
-				<h3>EQUAL</h3>
-				<div class="tsd-signature tsd-kind-icon">EQUAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Singly<wbr>Linked<wbr>List<span class="tsd-signature-symbol">(</span>existingList<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="singlylinkedlist.html" class="tsd-signature-type">SinglyLinkedList</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L6">lib/linear/linked-list/singly/SinglyLinkedList.ts:6</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Construct linked list from an array</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> existingList: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>T[]</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="singlylinkedlist.html" class="tsd-signature-type">SinglyLinkedList</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="counter" class="tsd-anchor"></a>
+				<h3>counter</h3>
+				<div class="tsd-signature tsd-kind-icon">counter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/type/compareFunction.ts#L3">lib/type/compareFunction.ts:3</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L6">lib/linear/linked-list/singly/SinglyLinkedList.ts:6</a></li>
 					</ul>
 				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-				<a name="larger" class="tsd-anchor"></a>
-				<h3>LARGER</h3>
-				<div class="tsd-signature tsd-kind-icon">LARGER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="head" class="tsd-anchor"></a>
+				<h3>head</h3>
+				<div class="tsd-signature tsd-kind-icon">head<span class="tsd-signature-symbol">:</span> <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="singlynode.html" class="tsd-signature-type">SinglyNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/type/compareFunction.ts#L2">lib/type/compareFunction.ts:2</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L5">lib/linear/linked-list/singly/SinglyLinkedList.ts:5</a></li>
 					</ul>
 				</aside>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-				<a name="smaller" class="tsd-anchor"></a>
-				<h3>SMALLER</h3>
-				<div class="tsd-signature tsd-kind-icon">SMALLER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;-1</span></div>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="length" class="tsd-anchor"></a>
+				<h3>length</h3>
+				<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/type/compareFunction.ts#L4">lib/type/compareFunction.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L167">lib/linear/linked-list/singly/SinglyLinkedList.ts:167</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Reset the linkedlist to empty initial</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="append" class="tsd-anchor"></a>
+				<h3>append</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">append<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L22">lib/linear/linked-list/singly/SinglyLinkedList.ts:22</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Append the element to the end of linkedlist</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>value: <span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>T</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="appendafter" class="tsd-anchor"></a>
+				<h3>append<wbr>After</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">append<wbr>After<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L60">lib/linear/linked-list/singly/SinglyLinkedList.ts:60</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Add element after a given index</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>value: <span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>T</p>
+								</div>
+							</li>
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>index</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<ul>
+							<li>true: correct insertion happens.</li>
+							<li>false: out of range insertion.</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="clear" class="tsd-anchor"></a>
+				<h3>clear</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L174">lib/linear/linked-list/singly/SinglyLinkedList.ts:174</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Reset the linkedlist to empty initial</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getat" class="tsd-anchor"></a>
+				<h3>get<wbr>At</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L131">lib/linear/linked-list/singly/SinglyLinkedList.ts:131</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Get element at given index</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>index</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="prepend" class="tsd-anchor"></a>
+				<h3>prepend</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">prepend<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L40">lib/linear/linked-list/singly/SinglyLinkedList.ts:40</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Prepend the element to the start of linkedlist</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>value: <span class="tsd-signature-type">T</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>T</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="removeat" class="tsd-anchor"></a>
+				<h3>remove<wbr>At</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">remove<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L94">lib/linear/linked-list/singly/SinglyLinkedList.ts:94</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Remove element at given index</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>index</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span>
+							<span class="tsd-signature-symbol"> | </span>
+							<span class="tsd-signature-type">undefined</span>
+						</h4>
+						<p>return removed element, null if it is invalid removal</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="reverse" class="tsd-anchor"></a>
+				<h3>reverse</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">reverse<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L148">lib/linear/linked-list/singly/SinglyLinkedList.ts:148</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Reverse the order of the linked list</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="toarray" class="tsd-anchor"></a>
+				<h3>to<wbr>Array</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">to<wbr>Array<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/linear/linked-list/singly/SinglyLinkedList.ts#L182">lib/linear/linked-list/singly/SinglyLinkedList.ts:182</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Convert linkedlist to array</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

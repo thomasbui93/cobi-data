@@ -2,6 +2,7 @@ import { BSTreeNode } from './BSTreeNode'
 import { CompareFunction, compare, ComparableReturn } from '../../type/compareFunction'
 import { Nullable } from '../../type/nullable'
 import { mapFunction } from '../../type/mapFunction'
+import { Queue } from '../../linear/queue'
 
 export class BSTree<T> {
   public root: Nullable<BSTreeNode<T>> = null
@@ -133,16 +134,16 @@ export class BSTree<T> {
     if (node === null) {
       return
     }
-    const queque: BSTreeNode<T>[] = []
-    queque.push(node)
-    while (queque.length > 0) {
-      node = queque.shift()!
+    const queue: Queue<Nullable<BSTreeNode<T>>> = new Queue<Nullable<BSTreeNode<T>>>()
+    queue.queue(node)
+    while (queue.length > 0) {
+      node = queue.dequeue()!
       callback(node.value)
       if (node.left) {
-        queque.push(node.left)
+        queue.queue(node.left)
       }
       if (node.right) {
-        queque.push(node.right)
+        queue.queue(node.right)
       }
     }
   }
