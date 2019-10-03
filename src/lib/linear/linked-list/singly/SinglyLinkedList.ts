@@ -60,6 +60,7 @@ export class SinglyLinkedList<T> {
   appendAfter(value: T, index: number): boolean {
     if (index <= 0 || !this.head) {
       this.prepend(value)
+      this.counter++
       return true
     }
 
@@ -76,6 +77,8 @@ export class SinglyLinkedList<T> {
       cursor++
     } while (cursor < index)
 
+    this.counter++
+
     newNode.next = temp!.next
     temp!.next = newNode
 
@@ -86,18 +89,22 @@ export class SinglyLinkedList<T> {
    * Remove element at given index
    * @param index index
    *
-   * @returns
-   *  - true: correct removal happens.
-   *  - false: out of range insertion.
+   * @returns {T} return removed element, null if it is invalid removal
    */
-  removeAt(index: number): boolean {
+  removeAt(index: number): T | undefined {
     if (this.counter <= index || index < 0) {
-      return false
+      return
     }
 
     if (index === 0) {
-      this.head = this.head ? this.head.next : null
-      return true
+      this.counter--
+      if (this.head) {
+        const removal = this.head
+        this.head = this.head.next
+        return removal.value
+      } else {
+        return
+      }
     }
 
     let cursor = 0
@@ -109,12 +116,11 @@ export class SinglyLinkedList<T> {
     }
 
     if (temp) {
+      this.counter--
+      const removal = temp.value
       temp.next = temp.next ? temp.next!.next : null
-    } else {
-      temp = null
+      return removal
     }
-
-    return true
   }
 
   /**
@@ -153,6 +159,13 @@ export class SinglyLinkedList<T> {
       prev = temp
     }
     this.head = prev
+  }
+
+  /**
+   * Reset the linkedlist to empty initial
+   */
+  get length(): number {
+    return this.counter
   }
 
   /**

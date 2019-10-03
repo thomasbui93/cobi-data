@@ -1,3 +1,5 @@
+import { SinglyLinkedList } from '../linked-list'
+
 /**
  * class Stack
  *
@@ -6,7 +8,7 @@
  * @template T
  */
 export class Stack<T> {
-  items: T[] = []
+  items: SinglyLinkedList<T> = new SinglyLinkedList<T>([])
   /**
    * add element to the stack
    *
@@ -14,7 +16,7 @@ export class Stack<T> {
    * @memberof Stack
    */
   push(item: T): void {
-    this.items.push(item)
+    this.items.prepend(item)
   }
 
   /**
@@ -24,7 +26,7 @@ export class Stack<T> {
    * @memberof Stack
    */
   pop(): T | undefined {
-    return this.items.pop()
+    return this.items.removeAt(0)
   }
 
   get length() {

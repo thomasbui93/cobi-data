@@ -159,6 +159,15 @@ describe('SinglyLinkedList', () => {
     })
   })
 
+  describe('get length', () => {
+    testCases.forEach(list => {
+      it(`should get correct length of input values: ${list.join(', ')}`, () => {
+        const singlyLinkedList = new SinglyLinkedList<number>(list)
+        expect(list.length).toEqual(singlyLinkedList.length)
+      })
+    })
+  })
+
   describe('clear method', () => {
     testCases.forEach(list => {
       it(`should reset the list to empty state: ${list.join(', ')}`, () => {
