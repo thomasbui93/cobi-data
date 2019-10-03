@@ -24,7 +24,7 @@
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run doc",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --config=jest.config.json --env=node --runInBand",
     "test:watch": "jest --watch --env=node -c='./jest.config.json'",
@@ -32,7 +32,8 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "check": "npm test && pkg-ok"
+    "check": "npm test && pkg-ok",
+    "doc": "typedoc --out docs --target es6 --theme minimal --mode file src"
   },
   "config": {
     "commitizen": {
@@ -43,19 +44,23 @@
       "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
     }
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "@types/lodash": "^4.14.141",
-    "@types/lodash.shuffle": "^4.2.6",
-    "@types/node": "^12.7.11",
-    "colors": "^1.4.0",
-    "commitizen": "^4.0.3",
-    "coveralls": "^3.0.6",
+    "@types/jest": "^26.0.7",
+    "@types/lodash": "^4.14.116",
+    "@types/node": "^12.7.10",
+    "colors": "^1.1.2",
+    "commitizen": "^4.1.2",
+    "coveralls": "^3.0.0",
     "cross-env": "^6.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.0.8",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.1",
+    "lodash": "^4.17.19",
     "lodash.camelcase": "^4.3.0",
     "lodash.shuffle": "^4.2.0",
     "pkg-ok": "^2.3.1",
@@ -71,17 +76,14 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.24.3",
     "semantic-release": "^15.13.25",
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^26.1.3",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.15.0",
-    "typescript": "^3.6.3",
+    "typescript": "^3.9.7",
     "validate-commit-msg": "^2.12.2"
-  },
-  "dependencies": {
-    "lodash": "^4.17.15"
   },
   "bugs": {
     "url": "https://github.com/thomasbui93/cobi-data/issues"
