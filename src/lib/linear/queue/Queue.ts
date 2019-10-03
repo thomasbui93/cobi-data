@@ -1,3 +1,10 @@
+/**
+ * class Queue
+ *
+ * @export
+ * @class Queue
+ * @template T
+ */
 export class Queue<T> {
   items: T[] = []
   /**
@@ -21,10 +28,16 @@ export class Queue<T> {
     return this.items.shift()
   }
 
+  /**
+   * get queue length
+   */
   get length() {
     return this.items.length
   }
 
+  /**
+   * check if queue length is empty
+   */
   public isEmpty() {
     return this.length === 0
   }
