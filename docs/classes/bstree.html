@@ -2389,7 +2389,7 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="bstree.html#comparefn" class="tsd-kind-icon">compare<wbr>Fn</a>
 				</li>
-				<li class=" tsd-kind-property tsd-parent-kind-class">
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="bstree.html#root" class="tsd-kind-icon">root</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2399,7 +2399,7 @@ img {
 					<a href="bstree.html#insert" class="tsd-kind-icon">insert</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="bstree.html#insertroot" class="tsd-kind-icon">insert<wbr>Root</a>
+					<a href="bstree.html#insertnode" class="tsd-kind-icon">insert<wbr>Node</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="bstree.html#remove" class="tsd-kind-icon">remove</a>
@@ -2407,28 +2407,31 @@ img {
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="bstree.html#removeroot" class="tsd-kind-icon">remove<wbr>Root</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="bstree.html#search" class="tsd-kind-icon">search</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="bstree.html#searchnode" class="tsd-kind-icon">search<wbr>Node</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="bstree.html#searchroot" class="tsd-kind-icon">search<wbr>Root</a>
-				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="bstree.html#traversebreathfirst" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="bstree.html#traversebreathfirstnode" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First<wbr>Node</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="bstree.html#traversedepthfirst" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First</a>
 				</li>
-				<li class=" tsd-kind-method tsd-parent-kind-class">
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="bstree.html#traversedepthfirstnode" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First<wbr>Node</a>
 				</li>
 			</ul>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="bstreenode.html" class="tsd-kind-icon">BSTree<wbr>Node</a>
+			<a href="binarytree.html" class="tsd-kind-icon">Binary<wbr>Tree</a>
+		</li>
+		<li class=" tsd-kind-class tsd-has-type-parameter">
+			<a href="binarytreenode.html" class="tsd-kind-icon">Binary<wbr>Tree<wbr>Node</a>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
 			<a href="queue.html" class="tsd-kind-icon">Queue</a>
@@ -2458,6 +2461,23 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Binary Search Tree</p>
+				</div>
+				<dl class="tsd-comment-tags">
+					<dt>export</dt>
+					<dd></dd>
+					<dt>class</dt>
+					<dd><p>BSTree</p>
+					</dd>
+					<dt>template</dt>
+					<dd><p>T</p>
+					</dd>
+				</dl>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-type-parameters">
 			<h3>Type parameters</h3>
 			<ul class="tsd-type-parameters">
@@ -2470,7 +2490,12 @@ img {
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">BSTree</span>
+					<a href="binarytree.html" class="tsd-signature-type">BinaryTree</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+					<ul class="tsd-hierarchy">
+						<li>
+							<span class="target">BSTree</span>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</section>
@@ -2488,7 +2513,7 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="bstree.html#comparefn" class="tsd-kind-icon">compare<wbr>Fn</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-class"><a href="bstree.html#root" class="tsd-kind-icon">root</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="bstree.html#root" class="tsd-kind-icon">root</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2496,15 +2521,15 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#findmin" class="tsd-kind-icon">find<wbr>Min</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#insert" class="tsd-kind-icon">insert</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#insertroot" class="tsd-kind-icon">insert<wbr>Root</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#insertnode" class="tsd-kind-icon">insert<wbr>Node</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#remove" class="tsd-kind-icon">remove</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#removeroot" class="tsd-kind-icon">remove<wbr>Root</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#search" class="tsd-kind-icon">search</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="bstree.html#searchnode" class="tsd-kind-icon">search<wbr>Node</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#searchroot" class="tsd-kind-icon">search<wbr>Root</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#traversebreathfirst" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#traversebreathfirstnode" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First<wbr>Node</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#traversedepthfirst" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="bstree.html#traversedepthfirstnode" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First<wbr>Node</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="bstree.html#traversebreathfirst" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="bstree.html#traversebreathfirstnode" class="tsd-kind-icon">traverse<wbr>Breath<wbr>First<wbr>Node</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="bstree.html#traversedepthfirst" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="bstree.html#traversedepthfirstnode" class="tsd-kind-icon">traverse<wbr>Depth<wbr>First<wbr>Node</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2522,9 +2547,20 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L9">lib/tree/bst/BSTree.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L20">lib/tree/bst/BSTree.ts:20</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates an instance of BSTree.
+								Pass comparing function.</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2544,19 +2580,46 @@ img {
 				<div class="tsd-signature tsd-kind-icon">compare<wbr>Fn<span class="tsd-signature-symbol">:</span> <a href="../globals.html#comparefunction" class="tsd-signature-type">CompareFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L9">lib/tree/bst/BSTree.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L20">lib/tree/bst/BSTree.ts:20</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>compare function</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>type</dt>
+						<dd><p>{CompareFunction<T>}</p>
+						</dd>
+						<dt>memberof</dt>
+						<dd><p>BSTree</p>
+						</dd>
+					</dl>
+				</div>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 				<a name="root" class="tsd-anchor"></a>
 				<h3>root</h3>
-				<div class="tsd-signature tsd-kind-icon">root<span class="tsd-signature-symbol">:</span> <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+				<div class="tsd-signature tsd-kind-icon">root<span class="tsd-signature-symbol">:</span> <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 				<aside class="tsd-sources">
+					<p>Inherited from <a href="binarytree.html">BinaryTree</a>.<a href="binarytree.html#root">root</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L8">lib/tree/bst/BSTree.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/binary-tree/BinaryTree.ts#L20">lib/tree/binary-tree/BinaryTree.ts:20</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>root</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>type</dt>
+						<dd><p>{Nullable&lt;BinaryTreeNode<T>&gt;}</p>
+						</dd>
+						<dt>memberof</dt>
+						<dd><p>BSTree</p>
+						</dd>
+					</dl>
+				</div>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
@@ -2565,22 +2628,32 @@ img {
 				<a name="findmin" class="tsd-anchor"></a>
 				<h3>find<wbr>Min</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">find<wbr>Min<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">find<wbr>Min<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L75">lib/tree/bst/BSTree.ts:75</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L136">lib/tree/bst/BSTree.ts:136</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Find minimal element in the tree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -2588,22 +2661,29 @@ img {
 				<a name="insert" class="tsd-anchor"></a>
 				<h3>insert</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>newNode<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L25">lib/tree/bst/BSTree.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L39">lib/tree/bst/BSTree.ts:39</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Insert value from binary tree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>newNode: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-							</li>
-							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>value: <span class="tsd-signature-type">T</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2611,22 +2691,35 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="insertroot" class="tsd-anchor"></a>
-				<h3>insert<wbr>Root</h3>
+				<a name="insertnode" class="tsd-anchor"></a>
+				<h3>insert<wbr>Node</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">insert<wbr>Root<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">insert<wbr>Node<span class="tsd-signature-symbol">(</span>newNode<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L15">lib/tree/bst/BSTree.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L56">lib/tree/bst/BSTree.ts:56</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Insert new binary tree node to a subtree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>value: <span class="tsd-signature-type">T</span></h5>
+								<h5>newNode: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2637,27 +2730,37 @@ img {
 				<a name="remove" class="tsd-anchor"></a>
 				<h3>remove</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L83">lib/tree/bst/BSTree.ts:83</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L152">lib/tree/bst/BSTree.ts:152</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Remove an element from the tree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>value: <span class="tsd-signature-type">T</span></h5>
 							</li>
 							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
 							<span class="tsd-signature-symbol"> | </span>
-							<a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+							<a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
 						</h4>
 					</li>
 				</ul>
@@ -2666,22 +2769,65 @@ img {
 				<a name="removeroot" class="tsd-anchor"></a>
 				<h3>remove<wbr>Root</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">remove<wbr>Root<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">remove<wbr>Root<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L71">lib/tree/bst/BSTree.ts:71</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L125">lib/tree/bst/BSTree.ts:125</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Remove root element</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>value: <span class="tsd-signature-type">T</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="search" class="tsd-anchor"></a>
+				<h3>search</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L89">lib/tree/bst/BSTree.ts:89</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Search element in the binary tree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>value: <span class="tsd-signature-type">T</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -2689,64 +2835,62 @@ img {
 				<a name="searchnode" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> search<wbr>Node</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<li class="tsd-signature tsd-kind-icon">search<wbr>Node<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">search<wbr>Node<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L55">lib/tree/bst/BSTree.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/bst/BSTree.ts#L102">lib/tree/bst/BSTree.ts:102</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Search element in a sub tree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>value: <span class="tsd-signature-type">T</span></h5>
 							</li>
 							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="searchroot" class="tsd-anchor"></a>
-				<h3>search<wbr>Root</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">search<wbr>Root<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L51">lib/tree/bst/BSTree.ts:51</a></li>
-							</ul>
-						</aside>
-						<h4 class="tsd-parameters-title">Parameters</h4>
-						<ul class="tsd-parameters">
-							<li>
-								<h5>value: <span class="tsd-signature-type">T</span></h5>
-							</li>
-						</ul>
-						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="traversebreathfirst" class="tsd-anchor"></a>
 				<h3>traverse<wbr>Breath<wbr>First</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Breath<wbr>First<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Inherited from <a href="binarytree.html">BinaryTree</a>.<a href="binarytree.html#traversebreathfirst">traverseBreathFirst</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L129">lib/tree/bst/BSTree.ts:129</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/binary-tree/BinaryTree.ts#L54">lib/tree/binary-tree/BinaryTree.ts:54</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Traverse breath first</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2757,23 +2901,34 @@ img {
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="traversebreathfirstnode" class="tsd-anchor"></a>
 				<h3>traverse<wbr>Breath<wbr>First<wbr>Node</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Breath<wbr>First<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Breath<wbr>First<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Inherited from <a href="binarytree.html">BinaryTree</a>.<a href="binarytree.html#traversebreathfirstnode">traverseBreathFirstNode</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L133">lib/tree/bst/BSTree.ts:133</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/binary-tree/BinaryTree.ts#L65">lib/tree/binary-tree/BinaryTree.ts:65</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Traverse breath first for subtree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li>
 								<h5>callback: <a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -2783,19 +2938,30 @@ img {
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="traversedepthfirst" class="tsd-anchor"></a>
 				<h3>traverse<wbr>Depth<wbr>First</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Depth<wbr>First<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Inherited from <a href="binarytree.html">BinaryTree</a>.<a href="binarytree.html#traversedepthfirst">traverseDepthFirst</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L116">lib/tree/bst/BSTree.ts:116</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/binary-tree/BinaryTree.ts#L28">lib/tree/binary-tree/BinaryTree.ts:28</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Treverse depth first</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
@@ -2806,23 +2972,34 @@ img {
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="traversedepthfirstnode" class="tsd-anchor"></a>
 				<h3>traverse<wbr>Depth<wbr>First<wbr>Node</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Depth<wbr>First<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<li class="tsd-signature tsd-kind-icon">traverse<wbr>Depth<wbr>First<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, callback<span class="tsd-signature-symbol">: </span><a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Inherited from <a href="binarytree.html">BinaryTree</a>.<a href="binarytree.html#traversedepthfirstnode">traverseDepthFirstNode</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/c50f40f/src/lib/tree/bst/BSTree.ts#L120">lib/tree/bst/BSTree.ts:120</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/128007f/src/lib/tree/binary-tree/BinaryTree.ts#L39">lib/tree/binary-tree/BinaryTree.ts:39</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p> Traverse depth first for a subtree</p>
+							</div>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BSTree</p>
+								</dd>
+							</dl>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="bstreenode.html" class="tsd-signature-type">BSTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>node: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="binarytreenode.html" class="tsd-signature-type">BinaryTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li>
 								<h5>callback: <a href="../globals.html#mapfunction" class="tsd-signature-type">mapFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
