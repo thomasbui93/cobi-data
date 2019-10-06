@@ -1,28 +1,59 @@
-import { BSTreeNode } from './BSTreeNode'
+import { BinaryTreeNode } from '../binary-tree/BinaryTreeNode'
 import { CompareFunction, compare, ComparableReturn } from '../../type/compareFunction'
 import { Nullable } from '../../type/nullable'
-import { mapFunction } from '../../type/mapFunction'
-import { Queue } from '../../linear/queue'
+import { BinaryTree } from '../binary-tree/BinaryTree'
 
-export class BSTree<T> {
-  public root: Nullable<BSTreeNode<T>> = null
+/**
+ * Binary Search Tree
+ *
+ * @export
+ * @class BSTree
+ * @template T
+ */
+export class BSTree<T> extends BinaryTree<T> {
+  /**
+   * compare function
+   *
+   * @type {CompareFunction<T>}
+   * @memberof BSTree
+   */
   public compareFn: CompareFunction<T>
 
+  /**
+   * Creates an instance of BSTree.
+   * Pass comparing function.
+   * @param {CompareFunction<T>} [compareFn=compare]
+   * @memberof BSTree
+   */
   constructor(compareFn: CompareFunction<T> = compare) {
+    super()
     this.compareFn = compareFn
   }
 
-  public insertRoot(value: T) {
-    const node = new BSTreeNode(value)
+  /**
+   * Insert value from binary tree
+   *
+   * @param {T} value
+   * @memberof BSTree
+   */
+  public insert(value: T) {
+    const node = new BinaryTreeNode(value)
 
     if (this.root === null) {
       this.root = node
     } else {
-      this.insert(node, this.root)
+      this.insertNode(node, this.root)
     }
   }
 
-  public insert(newNode: Nullable<BSTreeNode<T>>, node: Nullable<BSTreeNode<T>>) {
+  /**
+   * Insert new binary tree node to a subtree
+   *
+   * @param {Nullable<BinaryTreeNode<T>>} newNode
+   * @param {Nullable<BinaryTreeNode<T>>} node
+   * @memberof BSTree
+   */
+  public insertNode(newNode: Nullable<BinaryTreeNode<T>>, node: Nullable<BinaryTreeNode<T>>) {
     if (node === null || node.value === null) {
       return
     } else {
@@ -32,14 +63,14 @@ export class BSTree<T> {
           if (node.right === null) {
             node.right = newNode
           } else {
-            this.insert(newNode, node.right)
+            this.insertNode(newNode, node.right)
           }
           break
         case ComparableReturn.SMALLER:
           if (node.left === null) {
             node.left = newNode
           } else {
-            this.insert(newNode, node.left)
+            this.insertNode(newNode, node.left)
           }
           break
         default:
@@ -48,11 +79,27 @@ export class BSTree<T> {
     }
   }
 
-  public searchRoot(value: T): Nullable<BSTreeNode<T>> {
+  /**
+   * Search element in the binary tree
+   *
+   * @param {T} value
+   * @returns {Nullable<BinaryTreeNode<T>>}
+   * @memberof BSTree
+   */
+  public search(value: T): Nullable<BinaryTreeNode<T>> {
     return this.searchNode(value, this.root)
   }
 
-  private searchNode(value: T, node: Nullable<BSTreeNode<T>>): Nullable<BSTreeNode<T>> {
+  /**
+   * Search element in a sub tree
+   *
+   * @private
+   * @param {T} value
+   * @param {Nullable<BinaryTreeNode<T>>} node
+   * @returns {Nullable<BinaryTreeNode<T>>}
+   * @memberof BSTree
+   */
+  private searchNode(value: T, node: Nullable<BinaryTreeNode<T>>): Nullable<BinaryTreeNode<T>> {
     if (node === null || node.value === null) {
       return null
     } else {
@@ -68,11 +115,25 @@ export class BSTree<T> {
     }
   }
 
-  public removeRoot(value: T): Nullable<BSTreeNode<T>> {
+  /**
+   * Remove root element
+   *
+   * @param {T} value
+   * @returns {Nullable<BinaryTreeNode<T>>}
+   * @memberof BSTree
+   */
+  public removeRoot(value: T): Nullable<BinaryTreeNode<T>> {
     return this.remove(value, this.root)
   }
 
-  public findMin(node: Nullable<BSTreeNode<T>>): Nullable<BSTreeNode<T>> {
+  /**
+   * Find minimal element in the tree
+   *
+   * @param {Nullable<BinaryTreeNode<T>>} node
+   * @returns {Nullable<BinaryTreeNode<T>>}
+   * @memberof BSTree
+   */
+  public findMin(node: Nullable<BinaryTreeNode<T>>): Nullable<BinaryTreeNode<T>> {
     if (node === null || node.value === null) {
       return null
     } else {
@@ -80,7 +141,15 @@ export class BSTree<T> {
     }
   }
 
-  public remove(value: T, node: Nullable<BSTreeNode<T>>) {
+  /**
+   * Remove an element from the tree
+   *
+   * @param {T} value
+   * @param {Nullable<BinaryTreeNode<T>>} node
+   * @returns
+   * @memberof BSTree
+   */
+  public remove(value: T, node: Nullable<BinaryTreeNode<T>>) {
     if (node === null) {
       return null
     } else {
@@ -109,41 +178,6 @@ export class BSTree<T> {
           node.value = minValue ? minValue.value : node.right.value
           node.right = this.remove(node.value, node.right)
           return node
-      }
-    }
-  }
-
-  public traverseDepthFirst(callback: mapFunction<T>) {
-    this.traverseDepthFirstNode(this.root, callback)
-  }
-
-  public traverseDepthFirstNode(node: Nullable<BSTreeNode<T>>, callback: mapFunction<T>) {
-    if (node === null) {
-      return
-    }
-    this.traverseDepthFirstNode(node.left, callback)
-    callback(node.value)
-    this.traverseDepthFirstNode(node.right, callback)
-  }
-
-  public traverseBreathFirst(callback: mapFunction<T>) {
-    this.traverseBreathFirstNode(this.root, callback)
-  }
-
-  public traverseBreathFirstNode(node: Nullable<BSTreeNode<T>>, callback: mapFunction<T>) {
-    if (node === null) {
-      return
-    }
-    const queue: Queue<Nullable<BSTreeNode<T>>> = new Queue<Nullable<BSTreeNode<T>>>()
-    queue.queue(node)
-    while (queue.length > 0) {
-      node = queue.dequeue()!
-      callback(node.value)
-      if (node.left) {
-        queue.queue(node.left)
-      }
-      if (node.right) {
-        queue.queue(node.right)
       }
     }
   }
