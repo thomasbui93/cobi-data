@@ -4,19 +4,40 @@ import {
   ComparableReturn
 } from '../../type/compareFunction'
 
+/**
+ * Binary Heap class
+ *
+ * @export
+ * @class BinaryHeap
+ * @template T
+ */
 export class BinaryHeap<T> {
   private elements: T[] = []
   private compare: CompareFunction<T>
 
+  /**
+   *
+   * @param compare CompareFunction<T>
+   */
   constructor(compare: CompareFunction<T> = defaultCompare) {
     this.compare = compare
   }
 
+  /**
+   * Add element to the heap
+   * @param element T
+   */
   public add(element: T) {
     this.elements.push(element)
     this.bubbleUp(this.elements.length - 1)
   }
 
+  /**
+   * Extract least priority element.
+   *
+   * @returns T
+   * @memberof BinaryHeap
+   */
   public extract() {
     const element = this.elements[0]
     const end = this.elements.pop()!
@@ -29,6 +50,12 @@ export class BinaryHeap<T> {
     return element
   }
 
+  /**
+   * Remove certain node
+   *
+   * @param {T} node
+   * @memberof BinaryHeap
+   */
   public removeNode(node: T) {
     const size = this.size
 
@@ -45,6 +72,13 @@ export class BinaryHeap<T> {
     }
   }
 
+  /**
+   * sink down element by index
+   *
+   * @private
+   * @param {number} index
+   * @memberof BinaryHeap
+   */
   private sinkDown(index: number) {
     let currentIndex = index
     let element = this.elements[currentIndex]!
@@ -82,6 +116,13 @@ export class BinaryHeap<T> {
     }
   }
 
+  /**
+   * bubble up element at a certain index.
+   *
+   * @private
+   * @param {number} index
+   * @memberof BinaryHeap
+   */
   private bubbleUp(index: number) {
     let currentIndex = index
     let element = this.elements[index]
@@ -99,6 +140,13 @@ export class BinaryHeap<T> {
     }
   }
 
+  /**
+   * Return the size of the heap.
+   *
+   * @readonly
+   * @type {number}
+   * @memberof BinaryHeap
+   */
   get size(): number {
     return this.elements.length
   }
