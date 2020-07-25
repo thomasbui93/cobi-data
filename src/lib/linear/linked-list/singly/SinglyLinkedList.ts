@@ -16,7 +16,7 @@ export class SinglyLinkedList<T> {
   }
 
   /**
-   * Append the element to the end of linkedlist
+   * Append the element to the end of the Linked List
    * @param value T
    */
   append(value: T) {
@@ -34,7 +34,7 @@ export class SinglyLinkedList<T> {
   }
 
   /**
-   * Prepend the element to the start of linkedlist
+   * Prepend the element to the start of the Linked List
    * @param value T
    */
   prepend(value: T) {
@@ -162,14 +162,14 @@ export class SinglyLinkedList<T> {
   }
 
   /**
-   * Reset the linkedlist to empty initial
+   * Reset the the Linked List to empty initial
    */
   get length(): number {
     return this.counter
   }
 
   /**
-   * Reset the linkedlist to empty initial
+   * Reset the the Linked List to empty initial
    */
   clear() {
     this.head = null
@@ -177,7 +177,7 @@ export class SinglyLinkedList<T> {
   }
 
   /**
-   * Convert linkedlist to array
+   * Convert the Linked List to array
    */
   toArray(): T[] {
     let lastNode = this.head
