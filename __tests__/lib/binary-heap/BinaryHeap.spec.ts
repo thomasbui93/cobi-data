@@ -1,4 +1,4 @@
-import { BinaryHeap } from '../../../src/lib/tree'
+import { BinaryHeap } from '../../../src'
 import { shuffle } from 'lodash'
 
 const sortFunction = (a: number, b: number) => a - b

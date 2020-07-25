@@ -1,4 +1,4 @@
-import { SinglyLinkedList } from '../../../src/lib/linear/linked-list'
+import { SinglyLinkedList } from '../../../src'
 
 describe('SinglyLinkedList', () => {
   const testCases = [[], [1], [2, 3, 4]]
