@@ -67,15 +67,15 @@ export class BinaryTree<T> {
       return
     }
     const queue: Queue<Nullable<BinaryTreeNode<T>>> = new Queue<Nullable<BinaryTreeNode<T>>>()
-    queue.queue(node)
+    queue.enqueue(node)
     while (queue.length > 0) {
       node = queue.dequeue()!
       callback(node.value)
       if (node.left) {
-        queue.queue(node.left)
+        queue.enqueue(node.left)
       }
       if (node.right) {
-        queue.queue(node.right)
+        queue.enqueue(node.right)
       }
     }
   }

@@ -1,20 +1,22 @@
 import { Stack } from '../../../src/lib/linear/stack/index'
 describe('Stack push and pop method', () => {
-  it('should be able add element to the list', () => {
-    const stack: Stack<number> = new Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    expect(stack.length).toBe(3)
-    const expectedArray = [3, 2, 1]
-    while (stack.length > 0) {
-      expect(stack.pop()).toEqual(expectedArray.shift())
-    }
+  const testCases = [
+    [1,2,3,4,5,6],
+    [6,5,4,3,2,1]
+  ]
+  testCases.forEach((testCase: number[]) => {
+    it(`with case ${testCase.join(',')}`, () => {
+      const stack: Stack<number> = new Stack()
+      testCase.forEach(value => stack.push(value))
+      testCase.reverse().forEach((value) => {
+        expect(stack.pop()).toBe(value)
+      })
+    })
   })
 
   it('should be able add element to the list', () => {
     const stack: Stack<number> = new Stack()
-    expect(stack.pop()).toEqual(undefined)
+    expect(stack.pop()).toBeNull()
   })
 })
 

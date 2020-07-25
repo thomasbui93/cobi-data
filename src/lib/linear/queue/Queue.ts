@@ -1,4 +1,5 @@
-import { SinglyLinkedList } from '../linked-list'
+import { DoublyLinkedList } from '../linked-list'
+import { Nullable } from '../../type/nullable'
 
 /**
  * class Queue
@@ -8,38 +9,45 @@ import { SinglyLinkedList } from '../linked-list'
  * @template T
  */
 export class Queue<T> {
-  items: SinglyLinkedList<T> = new SinglyLinkedList<T>([])
+  items: DoublyLinkedList<T> = new DoublyLinkedList<T>()
 
   /**
    * add element to the queue
-   *
+   * Runtime: O(1)
    * @param {T} item
-   * @memberof Stack
+   * @memberof Queue
    */
-  queue(item: T): void {
+  enqueue(item: T): void {
     this.items.append(item)
   }
 
   /**
    * dequeue element from the queue
-   *
-   * @returns {(T | null)}
+   * Runtime: O(1)
+   * @returns { Nullable<T>}
    * @memberof Queue
-   * @return {T} return dequeued element, null if queque is empty
+   * @return {T} return dequeued element, null if queue is empty
    */
-  dequeue(): T | undefined {
-    return this.items.removeAt(0)
+  dequeue(): Nullable<T> {
+    const node = this.items.unshift()
+    return node ? node.value : null
   }
 
   /**
    * get queue length
+   * Runtime: O(1)
+   * @return {number} return number of element in the queue
+   * @memberof Queue
    */
-  get length() {
-    return this.items.counter
+  get length(): number {
+    return this.items.length
   }
 
   /**
-   * check if queue length is empty
+   * check whether if queue length is empty
+   * Runtime: O(1)
+   * @return {boolean} return true if queue is empty, false otherwise
+   * @memberof Queue
    */
   public isEmpty() {
     return this.length === 0
