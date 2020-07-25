@@ -29,7 +29,7 @@ export class Queue<T> {
    * @return {T} return dequeued element, null if queue is empty
    */
   dequeue(): Nullable<T> {
-    const node = this.items.unshift()
+    const node = this.items.shift()
     return node ? node.value : null
   }
 

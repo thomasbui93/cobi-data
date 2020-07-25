@@ -1,10 +1,11 @@
 import { Queue } from '../../../src/lib/linear/queue/index'
+import { fetchArray } from '../../helpers/seed'
 
 describe('Queue', () => {
   describe('#enqueue and #dequeue', () => {
     const testCases = [
-      [1,2,3,4,5,6],
-      [6,5,4,3,2,1]
+      fetchArray(10),
+      fetchArray(20)
     ]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
@@ -23,8 +24,8 @@ describe('Queue', () => {
 
   describe('#length', () => {
     const testCases = [
-      [1,2,3,4,5,6],
-      [6,5,4,3,2,1]
+      fetchArray(10),
+      fetchArray(20)
     ]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {

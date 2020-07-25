@@ -28,7 +28,7 @@ export class Stack<T> {
    * @memberof Stack
    */
   pop(): Nullable<T> {
-    const pop = this.items.unshift()
+    const pop = this.items.shift()
     return pop ? pop.value : null
   }
 

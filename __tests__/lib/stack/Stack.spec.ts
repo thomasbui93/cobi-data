@@ -1,8 +1,10 @@
-import { Stack } from '../../../src/lib/linear/stack/index'
+import { Stack } from '../../../src'
+import { fetchArray } from '../../helpers/seed'
+
 describe('Stack push and pop method', () => {
   const testCases = [
-    [1,2,3,4,5,6],
-    [6,5,4,3,2,1]
+    fetchArray(10),
+    fetchArray(20)
   ]
   testCases.forEach((testCase: number[]) => {
     it(`with case ${testCase.join(',')}`, () => {

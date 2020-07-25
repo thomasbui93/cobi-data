@@ -80,7 +80,7 @@ export class DoublyLinkedList<T> {
    * Runtime: O(1)
    * @returns Nullable<DLLNode<T>>
    */
-  public unshift(): Nullable<DLLNode<T>> {
+  public shift(): Nullable<DLLNode<T>> {
     if (this.head) {
       let oldHead = this.head
       const next = oldHead.next

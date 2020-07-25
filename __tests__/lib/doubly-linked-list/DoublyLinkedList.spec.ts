@@ -22,8 +22,8 @@ describe('DoublyLinkedList', () => {
 
   describe('#prepend', () => {
     const testCases = [
-      [1,2,3,4,5],
-      [5,4,3,2,1]
+      fetchArray(10),
+      fetchArray(20)
     ]
     testCases.forEach((testCase: number[]) => {
       it(`with case: ${testCase.join(',')}`, () => {
@@ -41,12 +41,12 @@ describe('DoublyLinkedList', () => {
   describe('mix between operation', () => {
     const testCases = [
       {
-        append: [1,3,5,7],
-        prepend: [2,4,6,8]
+        append: fetchArray(10),
+        prepend: fetchArray(10)
       },
       {
-        append: [9,11,13,15],
-        prepend: [10,12,14,16]
+        append: fetchArray(10),
+        prepend: fetchArray(10)
       },
     ]
     testCases.forEach(({append, prepend}) => {
@@ -69,8 +69,8 @@ describe('DoublyLinkedList', () => {
 
   describe('#pop', () => {
     const testCases = [
-      [1,2,3,4,5],
-      [5,4,3,2,1]
+      fetchArray(10),
+      fetchArray(20)
     ]
 
     testCases.forEach((testCase: number[]) => {
@@ -91,8 +91,8 @@ describe('DoublyLinkedList', () => {
 
   describe('#unshift', () => {
     const testCases = [
-      [1,2,3,4,5],
-      [5,4,3,2,1]
+      fetchArray(10),
+      fetchArray(20)
     ]
 
     testCases.forEach((testCase: number[]) => {
@@ -100,11 +100,89 @@ describe('DoublyLinkedList', () => {
         const cll = new DoublyLinkedList<number>()
         testCase.forEach((value: number) => cll.append(value))
         testCase.forEach((value: number) => {
-          const unshift = cll.unshift()
+          const unshift = cll.shift()
           expect(unshift!.value).toBe(value)
         })
-        expect(cll.unshift()).toBeNull()
+        expect(cll.shift()).toBeNull()
       })
+    })
+  })
+
+  describe('benchmark', () => {
+    describe('#append', () => {
+      const seed = fetchArray(1000000)
+      const arrayLabel = "push: dynamic array - 1000000"
+      const linkedListLabel = "push: linked list - 1000000"
+      console.time(arrayLabel)
+      const arr = []
+      seed.forEach(value => arr.push(value))
+      console.timeEnd(arrayLabel)
+      console.time(linkedListLabel)
+      const dll = new DoublyLinkedList<number>()
+      seed.forEach(value => dll.append(value))
+      console.timeEnd(linkedListLabel)
+    })
+
+    describe('#prepend', () => {
+      const seed = fetchArray(100000)
+      const arrayLabel = "unshift: dynamic array - 100000"
+      const linkedListLabel = "unshift: linked list - 100000"
+      console.time(arrayLabel)
+      const arr = []
+      seed.forEach(value => arr.unshift(value))
+      console.timeEnd(arrayLabel)
+      console.time(linkedListLabel)
+      const dll = new DoublyLinkedList<number>()
+      seed.forEach(value => dll.prepend(value))
+      console.timeEnd(linkedListLabel)
+    })
+
+    describe('#pop', () => {
+      const seed = fetchArray(100000)
+      const arrayLabel = "pop: dynamic array - 100000"
+      const linkedListLabel = "pop: linked list - 100000"
+      const arr: number[] = []
+      const dll = new DoublyLinkedList<number>()
+      seed.forEach(value => {
+        arr.push(value)
+        dll.append(value)
+      })
+      
+      console.time(arrayLabel)
+      while (arr.length > 0) {
+        arr.pop()
+      }
+      console.timeEnd(arrayLabel)
+
+      console.time(linkedListLabel)
+      while (dll.length > 0) {
+        dll.pop()
+      }
+      console.timeEnd(linkedListLabel)
+    })
+
+    describe('#shift', () => {
+      const seed = fetchArray(100000)
+      const arrayLabel = "shift: dynamic array - 100000"
+      const linkedListLabel = "shift: linked list - 100000"
+      const arr: number[] = []
+      const dll = new DoublyLinkedList<number>()
+      seed.forEach(value => {
+        arr.push(value)
+        dll.append(value)
+      })
+      
+      console.time(arrayLabel)
+      while (arr.length > 0) {
+        arr.shift()
+      }
+      console.timeEnd(arrayLabel)
+
+      console.time(linkedListLabel)
+      while (dll.length > 0) {
+        dll.shift()
+      }
+      console.timeEnd(linkedListLabel)
     })
   })
 })
