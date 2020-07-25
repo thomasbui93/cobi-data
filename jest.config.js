@@ -4,7 +4,7 @@ module.exports = {
   transform: {
     ".ts": "ts-jest"
   },
-  testRegex: "(/__tests__/.*|\\.(test|spec))\\.ts$",
+  testRegex: "(/__tests__/lib/.*|\\.(test|spec))\\.ts$",
   moduleFileExtensions: ["ts", "js"],
   coveragePathIgnorePatterns: [
     "/node_modules/",

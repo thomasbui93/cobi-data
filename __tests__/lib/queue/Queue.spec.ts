@@ -1,36 +1,44 @@
 import { Queue } from '../../../src/lib/linear/queue/index'
+import { fetchArray } from '../../helpers/seed'
 
-describe('Queue push and pop method', () => {
-  it('should be able add element to the list', () => {
-    const queue: Queue<number> = new Queue()
-    queue.queue(1)
-    queue.queue(2)
-    queue.queue(3)
-    expect(queue.length).toBe(3)
-    const expectedArray = [3, 2, 1]
-    while (queue.length > 0) {
-      expect(queue.dequeue()).toEqual(expectedArray.pop())
-    }
+describe('Queue', () => {
+  describe('#enqueue and #dequeue', () => {
+    const testCases = [
+      fetchArray(10),
+      fetchArray(20)
+    ]
+    testCases.forEach((testCase: number[]) => {
+      it(`with case ${testCase.join(',')}`, () => {
+        const queue: Queue<number> = new Queue()
+        testCase.forEach(value => queue.enqueue(value))
+        testCase.forEach((value) => {
+          expect(queue.dequeue()).toBe(value)
+        })
+      })
+    })
+    it('return null when dequeue queue is empty', () => {
+      const queue: Queue<number> = new Queue()
+      expect(queue.dequeue()).toBeNull()
+    })
   })
 
-  it('should be able add element to the empty list', () => {
-    const queue: Queue<number> = new Queue()
-    expect(queue.dequeue()).toEqual(undefined)
-  })
-})
-
-describe('Queue getLength and isEmpty', () => {
-  it('should get correct length of the list', () => {
-    const queue: Queue<number> = new Queue()
-    queue.queue(1)
-    queue.queue(2)
-    queue.queue(3)
-    expect(queue.length).toBe(3)
-    expect(queue.isEmpty()).toBe(false)
-  })
-
-  it('should return true is queue is empty', () => {
-    const queue: Queue<number> = new Queue()
-    expect(queue.isEmpty()).toEqual(true)
+  describe('#length', () => {
+    const testCases = [
+      fetchArray(10),
+      fetchArray(20)
+    ]
+    testCases.forEach((testCase: number[]) => {
+      it(`with case ${testCase.join(',')}`, () => {
+        const queue: Queue<number> = new Queue()
+        testCase.forEach(value => queue.enqueue(value))
+        expect(queue.length).toBe(testCase.length)
+        expect(queue.isEmpty()).toBe(false)
+      })
+    })
+  
+    it('should return true is queue is empty', () => {
+      const queue: Queue<number> = new Queue()
+      expect(queue.isEmpty()).toEqual(true)
+    })
   })
 })

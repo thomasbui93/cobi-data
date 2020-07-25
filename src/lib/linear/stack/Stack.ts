@@ -1,4 +1,5 @@
-import { SinglyLinkedList } from '../linked-list'
+import { DoublyLinkedList } from '../linked-list'
+import { Nullable } from '../../type/nullable'
 
 /**
  * class Stack
@@ -8,10 +9,11 @@ import { SinglyLinkedList } from '../linked-list'
  * @template T
  */
 export class Stack<T> {
-  items: SinglyLinkedList<T> = new SinglyLinkedList<T>([])
+  items: DoublyLinkedList<T> = new DoublyLinkedList<T>()
+
   /**
    * add element to the stack
-   *
+   * Runtime: O(1)
    * @param {T} item
    * @memberof Stack
    */
@@ -21,18 +23,31 @@ export class Stack<T> {
 
   /**
    * remove element from the stack
-   *
-   * @returns {(T | null)}
+   * Runtime: O(1)
+   * @returns {Nullable<T>}
    * @memberof Stack
    */
-  pop(): T | undefined {
-    return this.items.removeAt(0)
+  pop(): Nullable<T> {
+    const pop = this.items.shift()
+    return pop ? pop.value : null
   }
 
+  /**
+   * get queue length
+   * Runtime: O(1)
+   * @return {number} return number of element in the queue
+   * @memberof Stack
+   */
   get length() {
     return this.items.length
   }
 
+  /**
+   * check whether if queue length is empty
+   * Runtime: O(1)
+   * @return {boolean} return true if queue is empty, false otherwise
+   * @memberof Stack
+   */
   public isEmpty() {
     return this.length === 0
   }
