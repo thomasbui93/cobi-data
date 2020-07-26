@@ -1,8 +1,4 @@
-import {
-  CompareFunction,
-  compare as defaultCompare,
-  ComparableReturn
-} from '../../type/compareFunction'
+import { CompareFunction, compare as defaultCompare } from '../../type/compareFunction'
 import { Nullable } from '../../type/nullable'
 
 /**
@@ -26,6 +22,9 @@ export class BinaryHeap<T> {
 
   /**
    * Add element to the heap
+   *
+   * <br/> Runtime: O(log(n)).
+   *
    * @param element T
    */
   public add(element: T) {
@@ -34,7 +33,80 @@ export class BinaryHeap<T> {
   }
 
   /**
-   * bubble up element at a certain index.
+   * Return element in the list
+   *
+   * <br/> Runtime: O(1).
+   *
+   * @return {Nullable<T>}
+   */
+  public get list(): Nullable<T>[] {
+    return this.elements
+  }
+
+  /**
+   * Return the minimum priority in the heap without removing it.
+   *
+   * <br/> Runtime: O(1).
+   * @returns {Nullable<T>}
+   * @memberof BinaryHeap
+   */
+  public findMin(): Nullable<T> {
+    return this.size > 1 ? this.elements[1] : null
+  }
+
+  /**
+   * Extract least priority element.
+   * <br/> Remove the first element from the list.
+   * <br/> Replace it with the last element from the list.
+   * <br/> Fix the order by using sinkDown method for the first element.
+   *
+   * <br/> Runtime: O(log(n)).
+   * @returns {Nullable<T>}
+   * @memberof BinaryHeap
+   */
+  public extract(): Nullable<T> {
+    if (this.size > 0) {
+      const min = this.elements[1]
+      this.elements[1] = this.elements[this.size]
+      this.elements.pop()
+      this.sinkDown(1)
+      return min
+    }
+    return null
+  }
+
+  /**
+   * Remove an element in given index and rebalance the heap.
+   * <br/> Runtime: O(log(n))
+   *
+   * @param {number} index
+   */
+  public deleteAtIndex(index: number) {
+    if (index > this.size || index <= 0) {
+      throw Error('Index is out of range.')
+    }
+    index++
+    this.decreaseKey(index, null)
+    this.extract()
+  }
+
+  /**
+   * Replace an element in given index and rebalance the heap.
+   * <br/> Runtime: O(log(n))
+   *
+   * @param {number} index
+   * @param {Nullable<T>} newValue
+   */
+  public decreaseKey(index: number, newValue: Nullable<T>) {
+    if (index > this.size || index <= 0) {
+      throw Error('Index is out of range.')
+    }
+    this.elements[index] = newValue
+    this.bubbleUp(index)
+  }
+
+  /**
+   * Bubble up element at a certain index.
    *
    * @private
    * @param {number} index
@@ -48,26 +120,6 @@ export class BinaryHeap<T> {
       }
       index = parentIndex
     }
-  }
-
-  /**
-   * Extract least priority element.
-   * <br/> Remove the first element from the list.
-   * <br/> Replace it with the last element from the list.
-   * <br/> Fix the order by using sinkDown method for the first element.
-   *
-   * @returns {Nullable<T>}
-   * @memberof BinaryHeap
-   */
-  public extract(): Nullable<T> {
-    if (this.size > 0) {
-      const min = this.elements[1]
-      this.elements[1] = this.elements[this.size]
-      this.elements.pop()
-      this.sinkDown(1)
-      return min
-    }
-    return null
   }
 
   /**

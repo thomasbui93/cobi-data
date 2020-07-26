@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BinaryHeap | @moonage/cobi-data - v0.0.3</title>
+	<title>BinaryHeap | @moonage/cobi-data - v0.0.4</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -2335,7 +2335,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">@moonage/cobi-data - v0.0.3</a></strong>
+					<strong><a href="../index.html">@moonage/cobi-data - v0.0.4</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2384,6 +2384,9 @@ img {
 					<a href="binaryheap.html#elements" class="tsd-kind-icon">elements</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="binaryheap.html#list" class="tsd-kind-icon">list</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="binaryheap.html#size" class="tsd-kind-icon">size</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -2393,13 +2396,31 @@ img {
 					<a href="binaryheap.html#bubbleup" class="tsd-kind-icon">bubble<wbr>Up</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#decreasekey" class="tsd-kind-icon">decrease<wbr>Key</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="binaryheap.html#deleteatindex" class="tsd-kind-icon">delete<wbr>AtIndex</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="binaryheap.html#extract" class="tsd-kind-icon">extract</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="binaryheap.html#removenode" class="tsd-kind-icon">remove<wbr>Node</a>
+					<a href="binaryheap.html#findmin" class="tsd-kind-icon">find<wbr>Min</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#getleftchild" class="tsd-kind-icon">get<wbr>Left<wbr>Child</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#getrightchild" class="tsd-kind-icon">get<wbr>Right<wbr>Child</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#minchild" class="tsd-kind-icon">min<wbr>Child</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="binaryheap.html#sinkdown" class="tsd-kind-icon">sink<wbr>Down</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a href="binaryheap.html#swapindex" class="tsd-kind-icon">swap<wbr>Index</a>
 				</li>
 			</ul>
 		</li>
@@ -2499,6 +2520,7 @@ img {
 					<section class="tsd-index-section ">
 						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="binaryheap.html#list" class="tsd-kind-icon">list</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="binaryheap.html#size" class="tsd-kind-icon">size</a></li>
 						</ul>
 					</section>
@@ -2507,9 +2529,15 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#add" class="tsd-kind-icon">add</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#bubbleup" class="tsd-kind-icon">bubble<wbr>Up</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#decreasekey" class="tsd-kind-icon">decrease<wbr>Key</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#deleteatindex" class="tsd-kind-icon">delete<wbr>AtIndex</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#extract" class="tsd-kind-icon">extract</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#removenode" class="tsd-kind-icon">remove<wbr>Node</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="binaryheap.html#findmin" class="tsd-kind-icon">find<wbr>Min</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#getleftchild" class="tsd-kind-icon">get<wbr>Left<wbr>Child</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#getrightchild" class="tsd-kind-icon">get<wbr>Right<wbr>Child</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#minchild" class="tsd-kind-icon">min<wbr>Child</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#sinkdown" class="tsd-kind-icon">sink<wbr>Down</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="binaryheap.html#swapindex" class="tsd-kind-icon">swap<wbr>Index</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2527,7 +2555,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L16">lib/tree/binary-heap/BinaryHeap.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L16">lib/tree/binary-heap/BinaryHeap.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2556,23 +2584,46 @@ img {
 				<div class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">:</span> <a href="../globals.html#comparefunction" class="tsd-signature-type">CompareFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L16">lib/tree/binary-heap/BinaryHeap.ts:16</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L16">lib/tree/binary-heap/BinaryHeap.ts:16</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 				<a name="elements" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> elements</h3>
-				<div class="tsd-signature tsd-kind-icon">elements<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
+				<div class="tsd-signature tsd-kind-icon">elements<span class="tsd-signature-symbol">:</span> <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[null]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L15">lib/tree/binary-heap/BinaryHeap.ts:15</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L15">lib/tree/binary-heap/BinaryHeap.ts:15</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Accessors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="list" class="tsd-anchor"></a>
+				<h3>list</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> list<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L45">lib/tree/binary-heap/BinaryHeap.ts:45</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Return element in the list</p>
+							</div>
+							<p><br/> Runtime: O(1).</p>
+						</div>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 				<a name="size" class="tsd-anchor"></a>
 				<h3>size</h3>
@@ -2583,7 +2634,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L150">lib/tree/binary-heap/BinaryHeap.ts:150</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L189">lib/tree/binary-heap/BinaryHeap.ts:189</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2618,13 +2669,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L30">lib/tree/binary-heap/BinaryHeap.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L33">lib/tree/binary-heap/BinaryHeap.ts:33</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>Add element to the heap</p>
 							</div>
+							<p><br/> Runtime: O(log(n)).</p>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -2649,12 +2701,12 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L126">lib/tree/binary-heap/BinaryHeap.ts:126</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L118">lib/tree/binary-heap/BinaryHeap.ts:118</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>bubble up element at a certain index.</p>
+								<p>Bubble up element at a certain index.</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>memberof</dt>
@@ -2673,63 +2725,202 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="extract" class="tsd-anchor"></a>
-				<h3>extract</h3>
+				<a name="decreasekey" class="tsd-anchor"></a>
+				<h3>decrease<wbr>Key</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					<li class="tsd-signature tsd-kind-icon">decrease<wbr>Key<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, newValue<span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L41">lib/tree/binary-heap/BinaryHeap.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L103">lib/tree/binary-heap/BinaryHeap.ts:103</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Extract least priority element.</p>
+								<p>Replace an element in given index and rebalance the heap.
+								<br/> Runtime: O(log(n))</p>
 							</div>
-							<dl class="tsd-comment-tags">
-								<dt>memberof</dt>
-								<dd><p>BinaryHeap</p>
-								</dd>
-							</dl>
-						</div>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-						<p>T</p>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="removenode" class="tsd-anchor"></a>
-				<h3>remove<wbr>Node</h3>
-				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">remove<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L59">lib/tree/binary-heap/BinaryHeap.ts:59</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Remove certain node</p>
-							</div>
-							<dl class="tsd-comment-tags">
-								<dt>memberof</dt>
-								<dd><p>BinaryHeap</p>
-								</dd>
-							</dl>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>node: <span class="tsd-signature-type">T</span></h5>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>newValue: <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="deleteatindex" class="tsd-anchor"></a>
+				<h3>delete<wbr>AtIndex</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">delete<wbr>AtIndex<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L87">lib/tree/binary-heap/BinaryHeap.ts:87</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Remove an element in given index and rebalance the heap.
+								<br/> Runtime: O(log(n))</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="extract" class="tsd-anchor"></a>
+				<h3>extract</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L70">lib/tree/binary-heap/BinaryHeap.ts:70</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Extract least priority element.
+									<br/> Remove the first element from the list.
+									<br/> Replace it with the last element from the list.
+								<br/> Fix the order by using sinkDown method for the first element.</p>
+							</div>
+							<p><br/> Runtime: O(log(n)).</p>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BinaryHeap</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="findmin" class="tsd-anchor"></a>
+				<h3>find<wbr>Min</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">find<wbr>Min<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L56">lib/tree/binary-heap/BinaryHeap.ts:56</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Return the minimum priority in the heap without removing it.</p>
+							</div>
+							<p><br/> Runtime: O(1).</p>
+							<dl class="tsd-comment-tags">
+								<dt>memberof</dt>
+								<dd><p>BinaryHeap</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="getleftchild" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Left<wbr>Child</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Left<wbr>Child<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L174">lib/tree/binary-heap/BinaryHeap.ts:174</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="getrightchild" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Right<wbr>Child</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Right<wbr>Child<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L178">lib/tree/binary-heap/BinaryHeap.ts:178</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../globals.html#nullable" class="tsd-signature-type">Nullable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="minchild" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> min<wbr>Child</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">min<wbr>Child<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L150">lib/tree/binary-heap/BinaryHeap.ts:150</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Get the minimum direct child of given index</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>index: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -2743,12 +2934,13 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/7844662/src/lib/tree/binary-heap/BinaryHeap.ts#L82">lib/tree/binary-heap/BinaryHeap.ts:82</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L135">lib/tree/binary-heap/BinaryHeap.ts:135</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>sink down element by index</p>
+								<p>Swap out of order parent-child dynamic by given order.
+								<br/> Compare parent with minimum child and swap the value iteratively.</p>
 							</div>
 							<dl class="tsd-comment-tags">
 								<dt>memberof</dt>
@@ -2760,6 +2952,39 @@ img {
 						<ul class="tsd-parameters">
 							<li>
 								<h5>index: <span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+				<a name="swapindex" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> swap<wbr>Index</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">swap<wbr>Index<span class="tsd-signature-symbol">(</span>i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, j<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/d1592c7/src/lib/tree/binary-heap/BinaryHeap.ts#L168">lib/tree/binary-heap/BinaryHeap.ts:168</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Swap value between two indexes.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>i: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>j: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
