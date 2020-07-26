@@ -21,25 +21,45 @@ export class DoublyLinkedList<T> {
   private counter: number = 0
 
   /**
-   * Append value to the end of list
-   * Runtime: O(1)
+   * Get first node.
+   * <br/> Runtime: O(1).
+   *
+   * @returns Nullable<DLLNode<T>>
+   */
+  public getHead(): Nullable<DLLNode<T>> {
+    return this.head
+  }
+
+  /**
+   * Get last node.
+   * <br/> Runtime: O(1).
+   *
+   * @returns Nullable<DLLNode<T>>
+   */
+  public getTail(): Nullable<DLLNode<T>> {
+    return this.tail
+  }
+
+  /**
+   * Append value to the end of list.
+   * <br/> Runtime: O(1).
+   *
    * @param value
    */
   public append(value: T) {
     const node = new DLLNode(value)
     if (!this.tail) {
-      this.head = this.tail = node
+      this.prepend(value)
     } else {
-      this.tail.next = node
-      node.prev = this.tail
-      this.tail = node
+      this.insertAfter(this.tail, node)
+      this.counter++
     }
-    this.counter++
   }
 
   /**
-   * Remove the last node in list
-   * Runtime: O(1)
+   * Remove the last node in list.
+   * <br/> Runtime: O(1).
+   *
    * @returns Nullable<DLLNode<T>>
    */
   public pop(): Nullable<DLLNode<T>> {
@@ -60,8 +80,9 @@ export class DoublyLinkedList<T> {
   }
 
   /**
-   * Prepend value to the frontend of the list
-   * Runtime: O(1)
+   * Prepend value to the frontend of the list.
+   * <br/> Runtime: O(1).
+   *
    * @param value
    */
   public prepend(value: T) {
@@ -69,15 +90,37 @@ export class DoublyLinkedList<T> {
     if (!this.head) {
       this.head = this.tail = node
     } else {
-      node.next = this.head
-      this.head = node
+      this.insertBefore(this.head, node)
     }
     this.counter++
   }
 
+  private insertBefore(node: DLLNode<T>, newNode: DLLNode<T>) {
+    newNode.next = node
+    if (node.prev === null) {
+      this.head = newNode
+    } else {
+      newNode.prev = node.prev
+      node.prev.next = newNode
+    }
+    node.prev = newNode
+  }
+
+  private insertAfter(node: DLLNode<T>, newNode: DLLNode<T>) {
+    newNode.prev = node
+    if (node.next == null) {
+      this.tail = newNode
+    } else {
+      newNode.next = node.next
+      node.next.prev = newNode
+    }
+    node.next = newNode
+  }
+
   /**
    * Remove the first node in list
-   * Runtime: O(1)
+   * <br/> Runtime: O(1).
+   *
    * @returns Nullable<DLLNode<T>>
    */
   public shift(): Nullable<DLLNode<T>> {
@@ -98,7 +141,10 @@ export class DoublyLinkedList<T> {
   }
 
   /**
-   * @returns Return the number of nodes in the list
+   * Return the number of nodes in the list
+   * <br/> Runtime: O(1).
+   *
+   * @returns { number }
    */
   public get length(): number {
     return this.counter
@@ -106,7 +152,8 @@ export class DoublyLinkedList<T> {
 
   /**
    * Traverse through the list
-   * Runtime: O(n)
+   * <br/> Runtime: O(n)
+   *
    * @param callback Function
    */
   public traverse(callback: Function) {

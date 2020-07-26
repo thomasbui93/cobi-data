@@ -12,7 +12,7 @@ export class Queue<T> {
   items: DoublyLinkedList<T> = new DoublyLinkedList<T>()
 
   /**
-   * add element to the queue
+   * Add element to the queue.
    * Runtime: O(1)
    * @param {T} item
    * @memberof Queue
@@ -22,7 +22,7 @@ export class Queue<T> {
   }
 
   /**
-   * dequeue element from the queue
+   * Remove element from the queue.
    * Runtime: O(1)
    * @returns { Nullable<T>}
    * @memberof Queue
@@ -34,7 +34,7 @@ export class Queue<T> {
   }
 
   /**
-   * get queue length
+   * Get queue length.
    * Runtime: O(1)
    * @return {number} return number of element in the queue
    * @memberof Queue

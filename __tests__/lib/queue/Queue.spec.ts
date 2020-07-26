@@ -1,4 +1,4 @@
-import { Queue } from '../../../src/lib/linear/queue/index'
+import { Queue } from '../../../src'
 import { fetchArray } from '../../helpers/seed'
 
 describe('Queue', () => {
