@@ -1,25 +1,33 @@
 import { BinaryHeap } from '../../../src'
-import { shuffle } from 'lodash'
+import { uniqueArrayShuffle } from '../../helpers/seed'
 
 const sortFunction = (a: number, b: number) => a - b
 
 describe('BinaryHeap add and extract', () => {
-  it('should generate correct order of queue', () => {
-    const heap = new BinaryHeap<number>()
-    const sequence = shuffle([ 50, 60, 20, 30, 100, 80, 10, 90, 40, 70 ])
-    sequence.forEach((value: number) => heap.add(value))
-    sequence.sort(sortFunction)
-    sequence.forEach((value: number) => expect(heap.extract()).toEqual(value))
+  const testCases = [
+    uniqueArrayShuffle(10),
+    uniqueArrayShuffle(20),
+    uniqueArrayShuffle(50)
+  ]
+  testCases.forEach((sequence) => {
+    it(`should generate correct order of queue: ${sequence.join(',')}`, () => {
+      const heap = new BinaryHeap<number>()
+      sequence.forEach((value: number) => heap.add(value))
+      sequence.sort(sortFunction)
+      sequence.forEach((value: number) => expect(heap.extract()).toEqual(value))
+    })
   })
-})
 
-describe('BinaryHeap remove specific value', () => {
-  it('should remove an value in the binary heap and keep the order intact', () => {
+  it(`extract return null if the heap is empty`, () => {
     const heap = new BinaryHeap<number>()
-    let sequence = shuffle([ 50, 60, 20, 30, 100, 80, 10, 90, 40, 70 ])
-    sequence.forEach((value: number) => heap.add(value))
-    heap.removeNode(50)
-    sequence = [10, 20, 30, 40, 60, 70, 80, 90, 100]
-    sequence.forEach((value: number) => expect(heap.extract()).toEqual(value))
+    expect(heap.extract()).toBeNull()
+  })
+
+  it(`#add duplicate value`, () => {
+    const heap = new BinaryHeap<number>()
+    const testCase = [10, 15, 20, 15, 20, 15, 20, 15, 10]
+    testCase.forEach(value => heap.add(value))
+    testCase.sort(sortFunction)
+    testCase.forEach((value: number) => expect(heap.extract()).toEqual(value))
   })
 })

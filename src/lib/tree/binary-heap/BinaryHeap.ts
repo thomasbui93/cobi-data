@@ -3,6 +3,7 @@ import {
   compare as defaultCompare,
   ComparableReturn
 } from '../../type/compareFunction'
+import { Nullable } from '../../type/nullable'
 
 /**
  * Binary Heap class
@@ -12,7 +13,7 @@ import {
  * @template T
  */
 export class BinaryHeap<T> {
-  private elements: T[] = []
+  private elements: Nullable<T>[] = [null]
   private compare: CompareFunction<T>
 
   /**
@@ -33,90 +34,6 @@ export class BinaryHeap<T> {
   }
 
   /**
-   * Extract least priority element.
-   *
-   * @returns T
-   * @memberof BinaryHeap
-   */
-  public extract() {
-    const element = this.elements[0]
-    const end = this.elements.pop()!
-
-    if (this.elements.length > 0) {
-      this.elements[0] = end
-      this.sinkDown(0)
-    }
-
-    return element
-  }
-
-  /**
-   * Remove certain node
-   *
-   * @param {T} node
-   * @memberof BinaryHeap
-   */
-  public removeNode(node: T) {
-    const size = this.size
-
-    for (let index = 0; index < size - 1; index++) {
-      if (this.compare(node, this.elements[index]) !== ComparableReturn.EQUAL) continue
-
-      let end = this.elements.pop()
-      if (index === this.elements.length - 1) break
-
-      this.elements[index] = end!
-      this.bubbleUp(index)
-      this.sinkDown(index)
-      break
-    }
-  }
-
-  /**
-   * sink down element by index
-   *
-   * @private
-   * @param {number} index
-   * @memberof BinaryHeap
-   */
-  private sinkDown(index: number) {
-    let currentIndex = index
-    let element = this.elements[currentIndex]!
-    const length = this.elements.length
-
-    while (true) {
-      const child2N = (currentIndex + 1) * 2
-      const child1N = child2N - 1
-      let swapIndex
-
-      if (child1N < length) {
-        const child1 = this.elements[child1N]
-        if (this.compare(child1, element) < 0) {
-          swapIndex = child1N
-        }
-      }
-
-      if (child2N < length) {
-        const child2 = this.elements[child2N]
-        if (
-          this.compare(
-            child2,
-            typeof swapIndex === 'undefined' ? element : this.elements[swapIndex]
-          ) < 0
-        ) {
-          swapIndex = child2N
-        }
-      }
-      if (typeof swapIndex === 'undefined') break
-
-      this.elements[currentIndex] = this.elements[swapIndex]
-      this.elements[swapIndex] = element
-
-      currentIndex = swapIndex
-    }
-  }
-
-  /**
    * bubble up element at a certain index.
    *
    * @private
@@ -124,20 +41,87 @@ export class BinaryHeap<T> {
    * @memberof BinaryHeap
    */
   private bubbleUp(index: number) {
-    let currentIndex = index
-    let element = this.elements[index]
-    if (typeof element === 'undefined') return
-
-    while (currentIndex > 0) {
-      const parentIndex = Math.floor((currentIndex + 1) / 2) - 1
-      const parent = this.elements[parentIndex]!
-
-      if (this.compare(element, parent) >= 0) break
-
-      this.elements[parentIndex] = element
-      this.elements[currentIndex] = parent
-      currentIndex = parentIndex
+    while (Math.floor(index / 2) > 0) {
+      const parentIndex = Math.floor(index / 2)
+      if (this.compare(this.elements[parentIndex]!, this.elements[index]!) > 0) {
+        this.swapIndex(index, parentIndex)
+      }
+      index = parentIndex
     }
+  }
+
+  /**
+   * Extract least priority element.
+   * <br/> Remove the first element from the list.
+   * <br/> Replace it with the last element from the list.
+   * <br/> Fix the order by using sinkDown method for the first element.
+   *
+   * @returns {Nullable<T>}
+   * @memberof BinaryHeap
+   */
+  public extract(): Nullable<T> {
+    if (this.size > 0) {
+      const min = this.elements[1]
+      this.elements[1] = this.elements[this.size]
+      this.elements.pop()
+      this.sinkDown(1)
+      return min
+    }
+    return null
+  }
+
+  /**
+   * Swap out of order parent-child dynamic by given order.
+   * <br/> Compare parent with minimum child and swap the value iteratively.
+   * @private
+   * @param {number} index
+   * @memberof BinaryHeap
+   */
+  private sinkDown(index: number) {
+    while (index * 2 <= this.size) {
+      const mcIndex = this.minChild(index)
+      if (this.compare(this.elements[index]!, this.elements[mcIndex]!) > 0) {
+        this.swapIndex(index, mcIndex)
+      }
+      index = mcIndex
+    }
+  }
+
+  /**
+   * Get the minimum direct child of given index
+   *
+   * @param index
+   */
+  private minChild(index: number) {
+    // If the odd child is out of bound, return the even child.
+    if (index * 2 + 1 > this.size) {
+      return index * 2
+    }
+    // Compare between odd and even children.
+    if (this.compare(this.getLeftChild(index)!, this.getRightChild(index)!) < 0) {
+      return index * 2
+    }
+    return 2 * index + 1
+  }
+
+  /**
+   * Swap value between two indexes.
+   *
+   * @param i
+   * @param j
+   */
+  private swapIndex(i: number, j: number) {
+    const temp = this.elements[i]
+    this.elements[i] = this.elements[j]
+    this.elements[j] = temp
+  }
+
+  private getLeftChild(index: number): Nullable<T> {
+    return this.elements[index * 2]
+  }
+
+  private getRightChild(index: number): Nullable<T> {
+    return this.elements[index * 2 + 1]
   }
 
   /**
@@ -148,6 +132,6 @@ export class BinaryHeap<T> {
    * @memberof BinaryHeap
    */
   get size(): number {
-    return this.elements.length
+    return this.elements.length - 1
   }
 }
