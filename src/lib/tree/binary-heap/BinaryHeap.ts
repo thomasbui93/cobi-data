@@ -82,8 +82,8 @@ export class BinaryHeap<T> {
    * @param {number} index
    */
   public deleteAtIndex(index: number) {
-    if (index > this.size || index <= 0) {
-      throw Error('Index is out of range.')
+    if (index > this.size || index < 0) {
+      throw Error(`Index is out of range, index: ${index}`)
     }
     index++
     this.decreaseKey(index, null)
@@ -99,7 +99,7 @@ export class BinaryHeap<T> {
    */
   public decreaseKey(index: number, newValue: Nullable<T>) {
     if (index > this.size || index <= 0) {
-      throw Error('Index is out of range.')
+      throw Error(`Index is out of range, index: ${index}`)
     }
     this.elements[index] = newValue
     this.bubbleUp(index)
