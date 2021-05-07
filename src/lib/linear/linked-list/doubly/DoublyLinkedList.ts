@@ -18,7 +18,7 @@ class DLLNode<T> {
 export class DoublyLinkedList<T> {
   private head: Nullable<DLLNode<T>> = null
   private tail: Nullable<DLLNode<T>> = null
-  private counter: number = 0
+  private counter = 0
 
   /**
    * Get first node.
@@ -125,7 +125,7 @@ export class DoublyLinkedList<T> {
    */
   public shift(): Nullable<DLLNode<T>> {
     if (this.head) {
-      let oldHead = this.head
+      const oldHead = this.head
       const next = oldHead.next
       if (next) {
         next.prev = null
@@ -154,9 +154,9 @@ export class DoublyLinkedList<T> {
    * Traverse through the list
    * <br/> Runtime: O(n)
    *
-   * @param callback Function
+   * @param callback CallableFunction
    */
-  public traverse(callback: Function) {
+  public traverse(callback: CallableFunction) {
     let temp = this.head
     while (temp) {
       callback(temp.value)

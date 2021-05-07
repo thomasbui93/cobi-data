@@ -1,7 +1,7 @@
 export enum ComparableReturn {
   LARGER = 1,
   EQUAL = 0,
-  SMALLER = -1
+  SMALLER = -1,
 }
 
 export type CompareFunction<T> = (left: T, right: T) => ComparableReturn

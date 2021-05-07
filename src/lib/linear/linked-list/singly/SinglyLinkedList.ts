@@ -3,15 +3,14 @@ import { SinglyNode } from './SinglyNode'
 
 export class SinglyLinkedList<T> {
   head: Nullable<SinglyNode<T>> = null
-  counter: number = 0
+  counter = 0
 
   /**
    * Construct linked list from an array
    * @param existingList T[]
    */
   constructor(existingList: T[] = []) {
-    const self = this
-    existingList.forEach((value: T) => self.append(value))
+    existingList.forEach((value: T) => this.append(value))
     this.counter = existingList.length
   }
 
@@ -152,7 +151,7 @@ export class SinglyLinkedList<T> {
     prev.next = null
 
     while (current) {
-      let temp = current
+      const temp = current
       current = current.next
 
       temp.next = prev
