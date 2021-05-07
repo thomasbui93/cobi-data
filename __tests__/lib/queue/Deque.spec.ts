@@ -3,14 +3,11 @@ import { fetchArray } from '../../helpers/seed'
 
 describe('Deque', () => {
   describe('#insertFront and #removeRear', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
         const deque: Deque<number> = new Deque()
-        testCase.forEach(value => deque.insertFront(value))
+        testCase.forEach((value) => deque.insertFront(value))
         testCase.forEach((value) => {
           expect(deque.removeRear()).toBe(value)
         })
@@ -24,14 +21,11 @@ describe('Deque', () => {
   })
 
   describe('#insertRear and #removeFront', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
         const deque: Deque<number> = new Deque()
-        testCase.forEach(value => deque.insertRear(value))
+        testCase.forEach((value) => deque.insertRear(value))
         testCase.forEach((value) => {
           expect(deque.removeFront()).toBe(value)
         })
@@ -44,14 +38,11 @@ describe('Deque', () => {
   })
 
   describe('#getFront', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
         const deque: Deque<number> = new Deque()
-        testCase.forEach(value => deque.insertRear(value))
+        testCase.forEach((value) => deque.insertRear(value))
         expect(deque.getFront()).toBe(testCase[0])
       })
     })
@@ -62,14 +53,11 @@ describe('Deque', () => {
   })
 
   describe('#getRear', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
         const deque: Deque<number> = new Deque()
-        testCase.forEach(value => deque.insertRear(value))
+        testCase.forEach((value) => deque.insertRear(value))
         expect(deque.getRear()).toBe(testCase[testCase.length - 1])
       })
     })
@@ -80,14 +68,11 @@ describe('Deque', () => {
   })
 
   describe('#size', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case ${testCase.join(',')}`, () => {
         const deque: Deque<number> = new Deque()
-        testCase.forEach(value => deque.insertRear(value))
+        testCase.forEach((value) => deque.insertRear(value))
         expect(deque.size).toBe(testCase.length)
       })
     })

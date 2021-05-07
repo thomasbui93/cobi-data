@@ -1,0 +1,7 @@
+{
+  "out": "docs",
+  "excludeProtected": true,
+  "excludePrivate": true,
+  "includeVersion": true,
+  "theme": "minimal"
+}

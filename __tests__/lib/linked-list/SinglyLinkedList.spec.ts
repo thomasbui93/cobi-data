@@ -4,7 +4,7 @@ describe('SinglyLinkedList', () => {
   const testCases = [[], [1], [2, 3, 4]]
 
   describe('constructor', () => {
-    testCases.forEach(list => {
+    testCases.forEach((list) => {
       it(`should construct the list exactly the order of value: ${list.join(', ')}`, () => {
         const singlyLinkedList = new SinglyLinkedList<number>(list)
         expect(list).toEqual(singlyLinkedList.toArray())
@@ -89,8 +89,8 @@ describe('SinglyLinkedList', () => {
       ;[
         [[1, 2, 3, 4, 5], [2], [1, 2, 4, 5]],
         [[1, 2, 3, 4, 5], [3], [1, 2, 3, 5]],
-        [[1, 2, 3, 4, 5], [1], [1, 3, 4, 5]]
-      ].forEach(testCase => {
+        [[1, 2, 3, 4, 5], [1], [1, 3, 4, 5]],
+      ].forEach((testCase) => {
         const [source, index, result] = testCase
         const singlyLinkedList = new SinglyLinkedList<number>(source)
         singlyLinkedList.removeAt(index[0])
@@ -126,8 +126,8 @@ describe('SinglyLinkedList', () => {
         [[1, 2, 3, 4, 5], [2], [3]],
         [[1, 2, 3, 4, 5], [3], [4]],
         [[1, 2, 3, 4, 5], [1], [2]],
-        [[1, 2, 3, 4, 5], [0], [1]]
-      ].forEach(testCase => {
+        [[1, 2, 3, 4, 5], [0], [1]],
+      ].forEach((testCase) => {
         const [source, index, result] = testCase
         const singlyLinkedList = new SinglyLinkedList<number>(source)
         expect(singlyLinkedList.getAt(index[0])).toEqual(result[0])
@@ -150,7 +150,7 @@ describe('SinglyLinkedList', () => {
   })
 
   describe('reverse', () => {
-    testCases.forEach(list => {
+    testCases.forEach((list) => {
       it(`should reverse the order of values: ${list.join(', ')}`, () => {
         const singlyLinkedList = new SinglyLinkedList<number>(list)
         singlyLinkedList.reverse()
@@ -160,7 +160,7 @@ describe('SinglyLinkedList', () => {
   })
 
   describe('get length', () => {
-    testCases.forEach(list => {
+    testCases.forEach((list) => {
       it(`should get correct length of input values: ${list.join(', ')}`, () => {
         const singlyLinkedList = new SinglyLinkedList<number>(list)
         expect(list.length).toEqual(singlyLinkedList.length)
@@ -169,10 +169,10 @@ describe('SinglyLinkedList', () => {
   })
 
   describe('clear method', () => {
-    testCases.forEach(list => {
+    testCases.forEach((list) => {
       it(`should reset the list to empty state: ${list.join(', ')}`, () => {
         const singlyLinkedList = new SinglyLinkedList<number>()
-        list.forEach(value => singlyLinkedList.append(value))
+        list.forEach((value) => singlyLinkedList.append(value))
         singlyLinkedList.clear()
         expect([]).toEqual(singlyLinkedList.toArray())
       })
@@ -180,10 +180,10 @@ describe('SinglyLinkedList', () => {
   })
 
   describe('toArray method', () => {
-    testCases.forEach(list => {
+    testCases.forEach((list) => {
       it(`should collect exactly the order of value: ${list.join(', ')}`, () => {
         const singlyLinkedList = new SinglyLinkedList<number>()
-        list.forEach(value => singlyLinkedList.append(value))
+        list.forEach((value) => singlyLinkedList.append(value))
         expect(list).toEqual(singlyLinkedList.toArray())
       })
     })

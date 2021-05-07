@@ -155,13 +155,15 @@ export class BSTree<T> extends BinaryTree<T> {
     } else {
       const compareStatus = this.compareFn(value, node.value)
       switch (compareStatus) {
-        case ComparableReturn.LARGER:
+        case ComparableReturn.LARGER: {
           node.right = this.remove(value, node.right)
           return node
-        case ComparableReturn.SMALLER:
+        }
+        case ComparableReturn.SMALLER: {
           node.left = this.remove(value, node.left)
           return node
-        default:
+        }
+        default: {
           if (node.left === null && node.right === null) {
             node = null
             return node
@@ -178,6 +180,7 @@ export class BSTree<T> extends BinaryTree<T> {
           node.value = minValue ? minValue.value : node.right.value
           node.right = this.remove(node.value, node.right)
           return node
+        }
       }
     }
   }

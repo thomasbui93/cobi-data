@@ -2,14 +2,11 @@ import { Stack } from '../../../src'
 import { fetchArray } from '../../helpers/seed'
 
 describe('Stack push and pop method', () => {
-  const testCases = [
-    fetchArray(10),
-    fetchArray(20)
-  ]
+  const testCases = [fetchArray(10), fetchArray(20)]
   testCases.forEach((testCase: number[]) => {
     it(`with case ${testCase.join(',')}`, () => {
       const stack: Stack<number> = new Stack()
-      testCase.forEach(value => stack.push(value))
+      testCase.forEach((value) => stack.push(value))
       testCase.reverse().forEach((value) => {
         expect(stack.pop()).toBe(value)
       })

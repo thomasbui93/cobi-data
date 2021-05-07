@@ -1,10 +1,10 @@
-import { shuffle } from "lodash"
+import { shuffle } from 'lodash'
 
 export const fetchArray = (length: number): number[] => {
   const result = []
   while (length > 0) {
     result.push(Math.floor(Math.random() * length))
-    length --
+    length--
   }
   return result
 }
@@ -13,7 +13,7 @@ export const uniqueArray = (length: number): number[] => {
   const result = []
   while (length > 0) {
     result.push(length * 10 + Math.floor(Math.random() * 10))
-    length --
+    length--
   }
   return result
 }

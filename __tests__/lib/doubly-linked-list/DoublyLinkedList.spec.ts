@@ -3,10 +3,7 @@ import { fetchArray } from '../../helpers/seed'
 
 describe('DoublyLinkedList', () => {
   describe('#append', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case: ${testCase.join(',')}`, () => {
         const originalLength = testCase.length
@@ -21,10 +18,7 @@ describe('DoublyLinkedList', () => {
   })
 
   describe('#prepend', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
     testCases.forEach((testCase: number[]) => {
       it(`with case: ${testCase.join(',')}`, () => {
         const originalLength = testCase.length
@@ -42,14 +36,14 @@ describe('DoublyLinkedList', () => {
     const testCases = [
       {
         append: fetchArray(10),
-        prepend: fetchArray(10)
+        prepend: fetchArray(10),
       },
       {
         append: fetchArray(10),
-        prepend: fetchArray(10)
+        prepend: fetchArray(10),
       },
     ]
-    testCases.forEach(({append, prepend}) => {
+    testCases.forEach(({ append, prepend }) => {
       it(`with case append: ${append.join(',')}, prepend: ${prepend.join(',')}`, () => {
         const cll = new DoublyLinkedList<number>()
         const result: number[] = []
@@ -68,10 +62,7 @@ describe('DoublyLinkedList', () => {
   })
 
   describe('#pop', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
 
     testCases.forEach((testCase: number[]) => {
       it(`with case: ${testCase.join(',')}`, () => {
@@ -79,7 +70,7 @@ describe('DoublyLinkedList', () => {
         let originalLength = testCase.length
         testCase.forEach((value: number) => cll.append(value))
         testCase.reverse().forEach((value: number) => {
-          originalLength --
+          originalLength--
           const pop = cll.pop()
           expect(pop!.value).toBe(value)
           expect(cll.length).toBe(originalLength)
@@ -90,10 +81,7 @@ describe('DoublyLinkedList', () => {
   })
 
   describe('#unshift', () => {
-    const testCases = [
-      fetchArray(10),
-      fetchArray(20)
-    ]
+    const testCases = [fetchArray(10), fetchArray(20)]
 
     testCases.forEach((testCase: number[]) => {
       it(`with case: ${testCase.join(',')}`, () => {
@@ -111,43 +99,43 @@ describe('DoublyLinkedList', () => {
   describe('benchmark', () => {
     describe('#append', () => {
       const seed = fetchArray(1000000)
-      const arrayLabel = "push: dynamic array - 1000000"
-      const linkedListLabel = "push: linked list - 1000000"
+      const arrayLabel = 'push: dynamic array - 1000000'
+      const linkedListLabel = 'push: linked list - 1000000'
       console.time(arrayLabel)
       const arr = []
-      seed.forEach(value => arr.push(value))
+      seed.forEach((value) => arr.push(value))
       console.timeEnd(arrayLabel)
       console.time(linkedListLabel)
       const dll = new DoublyLinkedList<number>()
-      seed.forEach(value => dll.append(value))
+      seed.forEach((value) => dll.append(value))
       console.timeEnd(linkedListLabel)
     })
 
     describe('#prepend', () => {
       const seed = fetchArray(100000)
-      const arrayLabel = "unshift: dynamic array - 100000"
-      const linkedListLabel = "unshift: linked list - 100000"
+      const arrayLabel = 'unshift: dynamic array - 100000'
+      const linkedListLabel = 'unshift: linked list - 100000'
       console.time(arrayLabel)
       const arr = []
-      seed.forEach(value => arr.unshift(value))
+      seed.forEach((value) => arr.unshift(value))
       console.timeEnd(arrayLabel)
       console.time(linkedListLabel)
       const dll = new DoublyLinkedList<number>()
-      seed.forEach(value => dll.prepend(value))
+      seed.forEach((value) => dll.prepend(value))
       console.timeEnd(linkedListLabel)
     })
 
     describe('#pop', () => {
       const seed = fetchArray(100000)
-      const arrayLabel = "pop: dynamic array - 100000"
-      const linkedListLabel = "pop: linked list - 100000"
+      const arrayLabel = 'pop: dynamic array - 100000'
+      const linkedListLabel = 'pop: linked list - 100000'
       const arr: number[] = []
       const dll = new DoublyLinkedList<number>()
-      seed.forEach(value => {
+      seed.forEach((value) => {
         arr.push(value)
         dll.append(value)
       })
-      
+
       console.time(arrayLabel)
       while (arr.length > 0) {
         arr.pop()
@@ -163,15 +151,15 @@ describe('DoublyLinkedList', () => {
 
     describe('#shift', () => {
       const seed = fetchArray(100000)
-      const arrayLabel = "shift: dynamic array - 100000"
-      const linkedListLabel = "shift: linked list - 100000"
+      const arrayLabel = 'shift: dynamic array - 100000'
+      const linkedListLabel = 'shift: linked list - 100000'
       const arr: number[] = []
       const dll = new DoublyLinkedList<number>()
-      seed.forEach(value => {
+      seed.forEach((value) => {
         arr.push(value)
         dll.append(value)
       })
-      
+
       console.time(arrayLabel)
       while (arr.length > 0) {
         arr.shift()
