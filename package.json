@@ -31,19 +31,8 @@
     "test": "jest --env=node --runInBand",
     "test:watch": "jest --watch --env=node",
     "test:prod": "npm run prettier-format && npm run test -- --coverage --no-cache",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
     "check": "npm test && pkg-ok",
-    "doc": "typedoc --out docs --target es6 --theme minimal --mode file src"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    },
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
-    }
+    "doc": "typedoc src"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -53,10 +42,8 @@
     "@typescript-eslint/eslint-plugin-tslint": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "colors": "^1.4.0",
-    "commitizen": "^4.2.3",
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.3",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -81,12 +68,10 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-typescript2": "^0.30.0",
-    "semantic-release": "^17.4.2",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.36",
-    "typescript": "^4.2.4",
-    "validate-commit-msg": "^2.12.2"
+    "typescript": "^4.2.4"
   },
   "bugs": {
     "url": "https://github.com/thomasbui93/cobi-data/issues"
