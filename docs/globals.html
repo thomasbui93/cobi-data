@@ -2758,6 +2758,15 @@ img {
 		<li class=" tsd-kind-class tsd-has-type-parameter">
 			<a href="classes/stack.html" class="tsd-kind-icon">Stack</a>
 		</li>
+		<li class=" tsd-kind-class">
+			<a href="classes/trie.html" class="tsd-kind-icon">Trie</a>
+		</li>
+		<li class=" tsd-kind-class">
+			<a href="classes/trienode.html" class="tsd-kind-icon">Trie<wbr>Node</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/trietype.html" class="tsd-kind-icon">Trie<wbr>Type</a>
+		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 			<a href="globals.html#comparefunction" class="tsd-kind-icon">Compare<wbr>Function</a>
 		</li>
@@ -2808,6 +2817,14 @@ img {
 							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/singlylinkedlist.html" class="tsd-kind-icon">Singly<wbr>Linked<wbr>List</a></li>
 							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/singlynode.html" class="tsd-kind-icon">Singly<wbr>Node</a></li>
 							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/stack.html" class="tsd-kind-icon">Stack</a></li>
+							<li class="tsd-kind-class"><a href="classes/trie.html" class="tsd-kind-icon">Trie</a></li>
+							<li class="tsd-kind-class"><a href="classes/trienode.html" class="tsd-kind-icon">Trie<wbr>Node</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
+						<h3>Interfaces</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-interface"><a href="interfaces/trietype.html" class="tsd-kind-icon">Trie<wbr>Type</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2835,7 +2852,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Compare<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="enums/comparablereturn.html" class="tsd-signature-type">ComparableReturn</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/12711b5/src/lib/type/compareFunction.ts#L7">lib/type/compareFunction.ts:7</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/a76c844/src/lib/type/compareFunction.ts#L7">lib/type/compareFunction.ts:7</a></li>
 					</ul>
 				</aside>
 				<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2875,7 +2892,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Nullable&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/12711b5/src/lib/type/nullable.ts#L1">lib/type/nullable.ts:1</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/a76c844/src/lib/type/nullable.ts#L1">lib/type/nullable.ts:1</a></li>
 					</ul>
 				</aside>
 				<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2891,7 +2908,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">map<wbr>Function&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/12711b5/src/lib/type/mapFunction.ts#L1">lib/type/mapFunction.ts:1</a></li>
+						<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/a76c844/src/lib/type/mapFunction.ts#L1">lib/type/mapFunction.ts:1</a></li>
 					</ul>
 				</aside>
 				<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2935,7 +2952,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/12711b5/src/lib/type/compareFunction.ts#L9">lib/type/compareFunction.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/thomasbui93/cobi-data/blob/a76c844/src/lib/type/compareFunction.ts#L9">lib/type/compareFunction.ts:9</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2968,6 +2985,9 @@ img {
 					<ul class="tsd-legend">
 						<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 						<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 					</ul>
 				</div>
 			</div>
