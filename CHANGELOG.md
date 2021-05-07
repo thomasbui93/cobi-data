@@ -1,6 +1,11 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+### 0.0.5
+* Add Trie: [PR](https://github.com/thomasbui93/cobi-data/pull/54)
+* Modernize packages: [PR](https://github.com/thomasbui93/cobi-data/pull/55)
+
 ### 0.0.4
 * Add Deque: [PR](https://github.com/thomasbui93/cobi-data/pull/52)
 * Refactor BinaryHeap: [PR](https://github.com/thomasbui93/cobi-data/pull/53)
