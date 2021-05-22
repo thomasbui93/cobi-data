@@ -1,14 +1,16 @@
 on:
   push:
     branches:
-      - master
+      - main
+    tags:
+      - 'v*'
 
 name: Create Release
 
 jobs:
   build:
     name: Create Release
-    runs-on: ['self-hosted']
+    runs-on: ubuntu-latest
     steps:
       - name: Create Release
         id: create_release
